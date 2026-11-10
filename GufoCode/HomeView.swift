@@ -293,7 +293,7 @@ struct FinishBanner: View {
             Text("🏆").font(.system(size: 60))
             Text("Percorso completato!")
                 .font(.title2.weight(.heavy))
-            Text("Ora sai scrivere piccoli programmi: stampare, usare variabili, condizioni, cicli, liste e funzioni.")
+            Text("Hai completato tutte le lezioni: ora sai scrivere piccoli programmi con variabili, condizioni, cicli e funzioni. Prova un altro linguaggio!")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
         }
