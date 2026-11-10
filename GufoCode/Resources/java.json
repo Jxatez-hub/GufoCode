@@ -1,0 +1,882 @@
+{
+ "language": "java",
+ "units": [
+  {
+   "title": "Primi passi",
+   "subtitle": "Fai parlare il computer",
+   "lessons": [
+    {
+     "title": "System.out.println",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione stampa un testo in Java?",
+       "options": [
+        "printf(\"Ciao\")",
+        "System.out.println(\"Ciao\");",
+        "console.log(\"Ciao\")",
+        "print(\"Ciao\")"
+       ],
+       "answer": 1,
+       "explanation": "In Java si usa System.out.println."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "\"Ciao mondo\"",
+        "Niente",
+        "Ciao mondo",
+        "println"
+       ],
+       "answer": 2,
+       "explanation": "println mostra il testo senza le virgolette e va a capo.",
+       "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Ciao mondo\");\n    }\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il codice per stampare Benvenuto",
+       "template": [
+        "System.out.___(\"Benvenuto\");"
+       ],
+       "bank": [
+        "println",
+        "log",
+        "write",
+        "say"
+       ],
+       "blanks": [
+        "println"
+       ],
+       "explanation": "Il metodo si chiama println."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma minimo che stampa Ciao",
+       "lines": [
+        "public class Main {",
+        "    public static void main(String[] args) {",
+        "        System.out.println(\"Ciao\");",
+        "    }",
+        "}"
+       ],
+       "explanation": "La classe contiene il metodo main, che contiene le istruzioni."
+      },
+      {
+       "type": "choice",
+       "prompt": "Da dove parte l'esecuzione di un programma Java?",
+       "options": [
+        "Dal metodo main",
+        "Dalla prima riga del file",
+        "Dall'ultima riga",
+        "Da println"
+       ],
+       "answer": 0,
+       "explanation": "Il programma parte sempre dal metodo main."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale riga è un commento?",
+       "options": [
+        "// commento",
+        "# commento",
+        "<!-- commento -->",
+        "-- commento"
+       ],
+       "answer": 0,
+       "explanation": "In Java i commenti su una riga iniziano con //."
+      }
+     ]
+    },
+    {
+     "title": "Testi",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Ciao Luca",
+        "Ciao + Luca",
+        "CiaoLuca",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "Il + tra testi li unisce. Il primo contiene già uno spazio dopo Ciao.",
+       "code": "System.out.println(\"Ciao \" + \"Luca\");"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il codice per stampare Hello",
+       "template": [
+        "// saluto",
+        "System.out.println(___);"
+       ],
+       "bank": [
+        "\"Hello\"",
+        "Hello",
+        "(Hello)",
+        "'Hello"
+       ],
+       "blanks": [
+        "\"Hello\""
+       ],
+       "explanation": "Il testo va scritto tra virgolette doppie."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede con System.out.println(Ciao);?",
+       "options": [
+        "Stampa Ciao",
+        "Stampa println",
+        "Non succede niente",
+        "Errore: Ciao non è definito"
+       ],
+       "answer": 3,
+       "explanation": "Senza virgolette Java cerca una variabile chiamata Ciao e non la trova."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare Uno, poi Due, poi Tre",
+       "lines": [
+        "System.out.println(\"Uno\");",
+        "System.out.println(\"Due\");",
+        "System.out.println(\"Tre\");"
+       ],
+       "explanation": "L'ordine delle righe è l'ordine dei messaggi."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quali virgolette si usano per un testo di tipo String?",
+       "options": [
+        "Apici inversi",
+        "Solo le singole",
+        "Solo le doppie",
+        "Doppie o singole"
+       ],
+       "answer": 2,
+       "explanation": "Le String usano le doppie; le singole servono per un solo carattere (char)."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "ab",
+        "a+b",
+        "Errore",
+        "a b"
+       ],
+       "answer": 0,
+       "explanation": "Il + unisce i testi senza aggiungere spazi.",
+       "code": "System.out.println(\"a\" + \"b\");"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Variabili",
+   "subtitle": "Scatole con un nome",
+   "lessons": [
+    {
+     "title": "Tipi base",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa fa questa riga?",
+       "options": [
+        "Crea un metodo",
+        "Crea un intero punti con valore 5",
+        "Stampa 5",
+        "Confronta punti con 5"
+       ],
+       "answer": 1,
+       "explanation": "int dichiara un numero intero; = gli assegna il valore.",
+       "code": "int punti = 5;"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "5",
+        "punti",
+        "10"
+       ],
+       "answer": 3,
+       "explanation": "println mostra il valore della variabile, non il suo nome.",
+       "code": "int punti = 10;\nSystem.out.println(punti);"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il tipo per un testo",
+       "template": [
+        "___ nome = \"Anna\";"
+       ],
+       "bank": [
+        "String",
+        "string",
+        "text",
+        "char"
+       ],
+       "blanks": [
+        "String"
+       ],
+       "explanation": "String ha la S maiuscola: Java distingue maiuscole e minuscole."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale tipo serve per il valore 3.14?",
+       "options": [
+        "int",
+        "String",
+        "double",
+        "boolean"
+       ],
+       "answer": 2,
+       "explanation": "double memorizza numeri con la virgola."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede qui?",
+       "options": [
+        "Stampa 5",
+        "Stampa 0",
+        "Stampa cinque",
+        "Errore: un testo non può stare in un int"
+       ],
+       "answer": 3,
+       "explanation": "Java controlla i tipi: un int può contenere solo numeri interi.",
+       "code": "int x = \"cinque\";"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare il numero 7",
+       "lines": [
+        "int numero = 7;",
+        "System.out.println(numero);"
+       ],
+       "explanation": "Prima si crea la variabile, poi la si usa."
+      }
+     ]
+    },
+    {
+     "title": "Operatori",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "7",
+        "3 4",
+        "Errore",
+        "34"
+       ],
+       "answer": 0,
+       "explanation": "Con i numeri il + fa la somma.",
+       "code": "System.out.println(3 + 4);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3 + 4",
+        "7",
+        "Errore",
+        "34"
+       ],
+       "answer": 3,
+       "explanation": "Tra virgolette sono testi: il + li unisce.",
+       "code": "System.out.println(\"3\" + \"4\");"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3",
+        "2.5",
+        "2",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "Tra due interi la divisione è intera: il risultato è 2.",
+       "code": "System.out.println(5 / 2);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "0",
+        "Errore",
+        "2",
+        "1"
+       ],
+       "answer": 3,
+       "explanation": "% dà il resto della divisione: 7 diviso 3 fa 2 con resto 1.",
+       "code": "System.out.println(7 % 3);"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa per stampare il doppio di x",
+       "template": [
+        "int x = 6;",
+        "System.out.println(x ___ 2);"
+       ],
+       "bank": [
+        "*",
+        "+",
+        "/",
+        "%"
+       ],
+       "blanks": [
+        "*"
+       ],
+       "explanation": "Il simbolo * moltiplica."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare Ciao Marco",
+       "lines": [
+        "String nome = \"Marco\";",
+        "String saluto = \"Ciao \" + nome;",
+        "System.out.println(saluto);"
+       ],
+       "explanation": "Ogni riga usa ciò che è stato creato prima."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Condizioni",
+   "subtitle": "Il programma sceglie",
+   "lessons": [
+    {
+     "title": "if ed else",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Maggiorenne",
+        "Errore",
+        "Minorenne",
+        "Niente"
+       ],
+       "answer": 0,
+       "explanation": "20 >= 18 è vero, quindi viene eseguito il blocco dell'if.",
+       "code": "int eta = 20;\nif (eta >= 18) {\n    System.out.println(\"Maggiorenne\");\n} else {\n    System.out.println(\"Minorenne\");\n}"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale operatore controlla se due numeri sono uguali?",
+       "options": [
+        "=>",
+        "=",
+        "!=",
+        "=="
+       ],
+       "answer": 3,
+       "explanation": "Un solo = assegna un valore, due == confrontano."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa la condizione",
+       "template": [
+        "int voto = 8;",
+        "___ (voto >= 6) {",
+        "    System.out.println(\"Promosso\");",
+        "}"
+       ],
+       "bank": [
+        "if",
+        "else",
+        "for",
+        "while"
+       ],
+       "blanks": [
+        "if"
+       ],
+       "explanation": "if apre la condizione, tra parentesi tonde, e il blocco sta tra graffe."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma",
+       "lines": [
+        "int temp = 30;",
+        "if (temp > 25) {",
+        "    System.out.println(\"Fa caldo\");",
+        "}"
+       ],
+       "explanation": "Il blocco da eseguire sta tra le graffe dell'if."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Grande e poi Fine",
+        "Errore",
+        "Grande",
+        "Fine"
+       ],
+       "answer": 3,
+       "explanation": "La condizione è falsa, quindi l'if viene saltato. L'ultima riga è fuori dal blocco e viene sempre eseguita.",
+       "code": "int n = 3;\nif (n > 5) {\n    System.out.println(\"Grande\");\n}\nSystem.out.println(\"Fine\");"
+      },
+      {
+       "type": "choice",
+       "prompt": "Come si confrontano due String?",
+       "options": [
+        "Con ==",
+        "Con equals()",
+        "Con =",
+        "Con ==="
+       ],
+       "answer": 1,
+       "explanation": "Per i testi si usa .equals(): == confronta i riferimenti, non il contenuto."
+      }
+     ]
+    },
+    {
+     "title": "else if e operatori logici",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "B",
+        "A",
+        "Errore",
+        "C"
+       ],
+       "answer": 0,
+       "explanation": "70 non è >= 90, ma è >= 60: si ferma al primo ramo vero.",
+       "code": "int p = 70;\nif (p >= 90) {\n    System.out.println(\"A\");\n} else if (p >= 60) {\n    System.out.println(\"B\");\n} else {\n    System.out.println(\"C\");\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: devono essere vere entrambe le condizioni",
+       "template": [
+        "if (x > 0 ___ x < 10) {",
+        "    System.out.println(\"Tra 0 e 10\");",
+        "}"
+       ],
+       "bank": [
+        "&&",
+        "||",
+        "!",
+        "=="
+       ],
+       "blanks": [
+        "&&"
+       ],
+       "explanation": "&& significa e: servono entrambe le condizioni."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quanto vale true && false?",
+       "options": [
+        "null",
+        "Errore",
+        "true",
+        "false"
+       ],
+       "answer": 3,
+       "explanation": "Con && basta una condizione falsa per rendere falso il risultato."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Niente",
+        "No",
+        "Errore",
+        "Si"
+       ],
+       "answer": 3,
+       "explanation": "Con || basta che una condizione sia vera: b > 5 lo è.",
+       "code": "int a = 2;\nint b = 9;\nif (a > 5 || b > 5) {\n    System.out.println(\"Si\");\n} else {\n    System.out.println(\"No\");\n}"
+      },
+      {
+       "type": "order",
+       "prompt": "Il numero n esiste già. Ordina per stampare Pari se è pari, altrimenti Dispari",
+       "lines": [
+        "if (n % 2 == 0) {",
+        "    System.out.println(\"Pari\");",
+        "} else {",
+        "    System.out.println(\"Dispari\");",
+        "}"
+       ],
+       "explanation": "% dà il resto della divisione: un numero pari ha resto 0 con 2."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa fa l'operatore !?",
+       "options": [
+        "Stampa un messaggio",
+        "Somma due numeri",
+        "Inverte vero in falso e viceversa",
+        "Confronta due testi"
+       ],
+       "answer": 2,
+       "explanation": "!true vale false e !false vale true."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cicli",
+   "subtitle": "Ripetere senza fatica",
+   "lessons": [
+    {
+     "title": "for",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "1, 2, 3",
+        "0, 1, 2, 3",
+        "0, 1, 2 su tre righe",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "i parte da 0, il ciclo gira finché i < 3 e a ogni giro i aumenta di 1.",
+       "code": "for (int i = 0; i < 3; i++) {\n    System.out.println(i);\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Ripeti il messaggio 5 volte",
+       "template": [
+        "___ (int i = 0; i < 5; i++) {",
+        "    System.out.println(\"Ciao\");",
+        "}"
+       ],
+       "bank": [
+        "for",
+        "if",
+        "while",
+        "do"
+       ],
+       "blanks": [
+        "for"
+       ],
+       "explanation": "for ripete il blocco finché la condizione è vera."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quante volte stampa Hey?",
+       "options": [
+        "4",
+        "Infinite",
+        "3",
+        "5"
+       ],
+       "answer": 0,
+       "explanation": "i vale 0, 1, 2, 3: il blocco gira quattro volte.",
+       "code": "for (int i = 0; i < 4; i++) {\n    System.out.println(\"Hey\");\n}"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare i numeri da 1 a 3",
+       "lines": [
+        "for (int n = 1; n <= 3; n++) {",
+        "    System.out.println(n);",
+        "}"
+       ],
+       "explanation": "n parte da 1 e il ciclo continua finché n <= 3."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "3",
+        "6",
+        "0, 1, 2, 3"
+       ],
+       "answer": 2,
+       "explanation": "0+1+2+3 = 6. Il println è fuori dal ciclo: stampa una volta sola.",
+       "code": "int totale = 0;\nfor (int i = 0; i < 4; i++) {\n    totale = totale + i;\n}\nSystem.out.println(totale);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa significa i++?",
+       "options": [
+        "Aumenta i di 1",
+        "Confronta i con 1",
+        "Raddoppia i",
+        "Azzera i"
+       ],
+       "answer": 0,
+       "explanation": "i++ è la scorciatoia di i = i + 1."
+      }
+     ]
+    },
+    {
+     "title": "while",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3, 2, 1",
+        "Va avanti all'infinito",
+        "3, 2, 1, 0",
+        "1, 2, 3"
+       ],
+       "answer": 0,
+       "explanation": "Il ciclo gira finché n > 0 e a ogni giro n diminuisce di 1.",
+       "code": "int n = 3;\nwhile (n > 0) {\n    System.out.println(n);\n    n = n - 1;\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il ciclo",
+       "template": [
+        "int n = 0;",
+        "___ (n < 3) {",
+        "    n = n + 1;",
+        "}"
+       ],
+       "bank": [
+        "while",
+        "for",
+        "if",
+        "do"
+       ],
+       "blanks": [
+        "while"
+       ],
+       "explanation": "while ripete il blocco finché la condizione resta vera."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede se dimentichi di cambiare n dentro un while (n > 0)?",
+       "options": [
+        "Stampa una volta sola",
+        "Non succede nulla",
+        "Il ciclo non finisce mai",
+        "Si ferma subito"
+       ],
+       "answer": 2,
+       "explanation": "La condizione resta sempre vera: è un ciclo infinito."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione esce subito da un ciclo?",
+       "options": [
+        "stop",
+        "break",
+        "exit",
+        "end"
+       ],
+       "answer": 1,
+       "explanation": "break interrompe il ciclo."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma per contare da 1 a 3",
+       "lines": [
+        "int n = 1;",
+        "while (n <= 3) {",
+        "    System.out.println(n);",
+        "    n = n + 1;",
+        "}"
+       ],
+       "explanation": "Si parte da un valore, si controlla la condizione, si stampa e si aggiorna n."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quando conviene usare for invece di while?",
+       "options": [
+        "Quando sai quante volte ripetere",
+        "Quando vuoi un errore",
+        "Solo con i testi",
+        "Mai"
+       ],
+       "answer": 0,
+       "explanation": "for è ideale con un numero noto di ripetizioni; while quando dipende da una condizione."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Array e metodi",
+   "subtitle": "Il tuo primo programma completo",
+   "lessons": [
+    {
+     "title": "Array",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "8",
+        "9",
+        "7"
+       ],
+       "answer": 3,
+       "explanation": "Gli indici partono da 0: il primo elemento è voti[0].",
+       "code": "int[] voti = {7, 8, 9};\nSystem.out.println(voti[0]);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3",
+        "2",
+        "4",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "length, senza parentesi, dà il numero di elementi dell'array.",
+       "code": "int[] a = {5, 6, 7};\nSystem.out.println(a.length);"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa con la proprietà che dà la lunghezza",
+       "template": [
+        "int[] a = {1, 2, 3};",
+        "System.out.println(a[a.___ - 1]);"
+       ],
+       "bank": [
+        "length",
+        "size",
+        "count",
+        "len"
+       ],
+       "blanks": [
+        "length"
+       ],
+       "explanation": "L'ultimo indice è length - 1; negli array length si scrive senza parentesi."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3",
+        "12",
+        "6",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "Il ciclo somma tutti gli elementi: 2 + 4 + 6 = 12.",
+       "code": "int[] a = {2, 4, 6};\nint tot = 0;\nfor (int i = 0; i < a.length; i++) {\n    tot = tot + a[i];\n}\nSystem.out.println(tot);"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare ogni colore dell'array",
+       "lines": [
+        "String[] colori = {\"rosso\", \"blu\"};",
+        "for (String c : colori) {",
+        "    System.out.println(c);",
+        "}"
+       ],
+       "explanation": "Il for-each scorre direttamente gli elementi dell'array."
+      },
+      {
+       "type": "choice",
+       "prompt": "Da quale indice parte il primo elemento di un array?",
+       "options": [
+        "10",
+        "1",
+        "0",
+        "-1"
+       ],
+       "answer": 2,
+       "explanation": "In Java, come in molti linguaggi, gli indici partono da 0."
+      }
+     ]
+    },
+    {
+     "title": "Metodi",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Quale parola indica che un metodo non restituisce nulla?",
+       "options": [
+        "void",
+        "null",
+        "none",
+        "empty"
+       ],
+       "answer": 0,
+       "explanation": "void significa nessun valore restituito."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "8",
+        "0",
+        "4",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "Il metodo restituisce il doppio di 4.",
+       "code": "static int doppio(int x) {\n    return x * 2;\n}\n\npublic static void main(String[] args) {\n    System.out.println(doppio(4));\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: il metodo deve restituire la somma",
+       "template": [
+        "static int somma(int a, int b) {",
+        "    ___ a + b;",
+        "}"
+       ],
+       "bank": [
+        "return",
+        "System.out.println",
+        "int",
+        "if"
+       ],
+       "blanks": [
+        "return"
+       ],
+       "explanation": "Con return il risultato torna a chi ha chiamato il metodo."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa indica int in static int somma(...)?",
+       "options": [
+        "Il tipo del valore restituito",
+        "Un commento",
+        "Una variabile",
+        "Un ciclo"
+       ],
+       "answer": 0,
+       "explanation": "Il tipo prima del nome dice cosa restituisce il metodo."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa fa return?",
+       "options": [
+        "Restituisce un valore a chi ha chiamato il metodo",
+        "Stampa a schermo",
+        "Crea una variabile",
+        "Apre un ciclo"
+       ],
+       "answer": 0,
+       "explanation": "println mostra un valore, return lo restituisce per poterlo usare altrove."
+      },
+      {
+       "type": "order",
+       "prompt": "Mini-programma finale: stampa il quadrato di 4",
+       "lines": [
+        "static int quadrato(int n) {",
+        "    return n * n;",
+        "}",
+        "public static void main(String[] args) {",
+        "    System.out.println(quadrato(4));",
+        "}"
+       ],
+       "explanation": "Prima definisci il metodo, poi lo chiami dal main: hai scritto un programma completo!"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

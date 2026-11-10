@@ -1,0 +1,890 @@
+{
+ "language": "javascript",
+ "units": [
+  {
+   "title": "Primi passi",
+   "subtitle": "Fai parlare il computer",
+   "lessons": [
+    {
+     "title": "console.log",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione scrive un messaggio nella console?",
+       "options": [
+        "console.log(\"Ciao\")",
+        "echo \"Ciao\"",
+        "System.out.println(\"Ciao\")",
+        "print(\"Ciao\")"
+       ],
+       "answer": 0,
+       "explanation": "In JavaScript si usa console.log()."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Niente",
+        "Ciao mondo",
+        "console.log",
+        "\"Ciao mondo\""
+       ],
+       "answer": 1,
+       "explanation": "Mostra il testo senza le virgolette.",
+       "code": "console.log(\"Ciao mondo\");"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il codice per stampare Benvenuto",
+       "template": [
+        "console.___(\"Benvenuto\");"
+       ],
+       "bank": [
+        "log",
+        "print",
+        "write",
+        "say"
+       ],
+       "blanks": [
+        "log"
+       ],
+       "explanation": "Il metodo si chiama log, scritto in minuscolo."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare prima Ciao e poi Come stai?",
+       "lines": [
+        "console.log(\"Ciao\");",
+        "console.log(\"Come stai?\");"
+       ],
+       "explanation": "Le righe vengono eseguite dall'alto verso il basso."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa si scrive di solito alla fine di un'istruzione JavaScript?",
+       "options": [
+        "I due punti :",
+        "Il punto e virgola ;",
+        "Il punto .",
+        "Niente"
+       ],
+       "answer": 1,
+       "explanation": "Il ; chiude l'istruzione. Spesso è facoltativo, ma è buona abitudine."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale riga è un commento?",
+       "options": [
+        "-- commento",
+        "<!-- commento",
+        "// commento",
+        "# commento"
+       ],
+       "answer": 2,
+       "explanation": "In JavaScript i commenti su una riga iniziano con //."
+      }
+     ]
+    },
+    {
+     "title": "Testi",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Ciao Luca",
+        "CiaoLuca",
+        "Errore",
+        "Ciao + Luca"
+       ],
+       "answer": 0,
+       "explanation": "Il + tra testi li unisce. Il primo contiene già uno spazio dopo Ciao.",
+       "code": "console.log(\"Ciao \" + \"Luca\");"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il codice per stampare Hello",
+       "template": [
+        "// saluto",
+        "console.log(___);"
+       ],
+       "bank": [
+        "\"Hello\"",
+        "Hello",
+        "(Hello)",
+        "'Hello"
+       ],
+       "blanks": [
+        "\"Hello\""
+       ],
+       "explanation": "Il testo va scritto tra virgolette."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede con console.log(Ciao);?",
+       "options": [
+        "Stampa Ciao",
+        "Stampa console",
+        "Non succede niente",
+        "Errore: Ciao non è definito"
+       ],
+       "answer": 3,
+       "explanation": "Senza virgolette JavaScript cerca una variabile chiamata Ciao e non la trova."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare Uno, poi Due, poi Tre",
+       "lines": [
+        "console.log(\"Uno\");",
+        "console.log(\"Due\");",
+        "console.log(\"Tre\");"
+       ],
+       "explanation": "L'ordine delle righe è l'ordine dei messaggi."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quali virgolette si possono usare per scrivere un testo?",
+       "options": [
+        "Nessuna",
+        "Doppie, singole e apici inversi",
+        "Solo le singole",
+        "Solo le doppie"
+       ],
+       "answer": 1,
+       "explanation": "JavaScript accetta \"…\", '…' e `…`; gli apici inversi permettono anche di inserire variabili."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "ab",
+        "a b",
+        "a+b",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "Il + unisce i testi senza aggiungere spazi.",
+       "code": "console.log(\"a\" + \"b\");"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Variabili",
+   "subtitle": "Scatole con un nome",
+   "lessons": [
+    {
+     "title": "let e const",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa fa questa riga?",
+       "options": [
+        "Stampa 5",
+        "Confronta punti con 5",
+        "Crea una variabile punti con valore 5",
+        "Crea una funzione"
+       ],
+       "answer": 2,
+       "explanation": "let crea una variabile il cui valore si può cambiare.",
+       "code": "let punti = 5;"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "punti",
+        "10",
+        "Errore",
+        "5"
+       ],
+       "answer": 1,
+       "explanation": "console.log mostra il valore della variabile, non il suo nome.",
+       "code": "let punti = 10;\nconsole.log(punti);"
+      },
+      {
+       "type": "fill",
+       "prompt": "Crea una costante, cioè un valore che non cambia",
+       "template": [
+        "___ PI = 3.14;"
+       ],
+       "bank": [
+        "const",
+        "let",
+        "var",
+        "final"
+       ],
+       "blanks": [
+        "const"
+       ],
+       "explanation": "const crea una variabile che non può essere riassegnata."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede qui?",
+       "options": [
+        "Stampa 5",
+        "Stampa undefined",
+        "Errore: una const non si può riassegnare",
+        "Stampa 8"
+       ],
+       "answer": 2,
+       "explanation": "Una const non può cambiare valore dopo la creazione.",
+       "code": "const a = 5;\na = 8;\nconsole.log(a);"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare il numero 7",
+       "lines": [
+        "let numero = 7;",
+        "console.log(numero);"
+       ],
+       "explanation": "Prima si crea la variabile, poi la si usa."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "5",
+        "3",
+        "Errore",
+        "8"
+       ],
+       "answer": 3,
+       "explanation": "Con let il valore si può cambiare: vale l'ultimo assegnato.",
+       "code": "let a = 5;\na = 8;\nconsole.log(a);"
+      }
+     ]
+    },
+    {
+     "title": "Numeri e testi",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "34",
+        "7",
+        "3 4"
+       ],
+       "answer": 2,
+       "explanation": "Con i numeri il + fa la somma.",
+       "code": "console.log(3 + 4);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "34",
+        "7",
+        "3 + 4"
+       ],
+       "answer": 1,
+       "explanation": "Tra virgolette sono testi: il + li unisce.",
+       "code": "console.log(\"3\" + \"4\");"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Ciao nome",
+        "Ciao Anna",
+        "Errore",
+        "Ciao ${nome}"
+       ],
+       "answer": 1,
+       "explanation": "Con gli apici inversi, ${...} inserisce il valore della variabile nel testo.",
+       "code": "let nome = \"Anna\";\nconsole.log(`Ciao ${nome}`);"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa per stampare il doppio di x",
+       "template": [
+        "let x = 6;",
+        "console.log(x ___ 2);"
+       ],
+       "bank": [
+        "*",
+        "+",
+        "/",
+        "="
+       ],
+       "blanks": [
+        "*"
+       ],
+       "explanation": "Il simbolo * moltiplica."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "2",
+        "3",
+        "2.5",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "In JavaScript la divisione dà sempre il risultato con la virgola.",
+       "code": "console.log(5 / 2);"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare Ciao Marco",
+       "lines": [
+        "let nome = \"Marco\";",
+        "let saluto = \"Ciao \" + nome;",
+        "console.log(saluto);"
+       ],
+       "explanation": "Ogni riga usa ciò che è stato creato prima."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Condizioni",
+   "subtitle": "Il programma sceglie",
+   "lessons": [
+    {
+     "title": "if ed else",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "Niente",
+        "Maggiorenne",
+        "Minorenne"
+       ],
+       "answer": 2,
+       "explanation": "20 >= 18 è vero, quindi viene eseguito il blocco dell'if.",
+       "code": "let eta = 20;\nif (eta >= 18) {\n    console.log(\"Maggiorenne\");\n} else {\n    console.log(\"Minorenne\");\n}"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale operatore confronta valore e tipo?",
+       "options": [
+        "=>",
+        "=",
+        "!==",
+        "==="
+       ],
+       "answer": 3,
+       "explanation": "=== è il confronto consigliato; un solo = assegna un valore."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa la condizione",
+       "template": [
+        "let voto = 8;",
+        "___ (voto >= 6) {",
+        "    console.log(\"Promosso\");",
+        "}"
+       ],
+       "bank": [
+        "if",
+        "else",
+        "for",
+        "while"
+       ],
+       "blanks": [
+        "if"
+       ],
+       "explanation": "if apre la condizione, scritta tra parentesi tonde, e il blocco sta tra graffe."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma",
+       "lines": [
+        "let temp = 30;",
+        "if (temp > 25) {",
+        "    console.log(\"Fa caldo\");",
+        "}"
+       ],
+       "explanation": "Il blocco da eseguire sta tra le graffe dell'if."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Grande e poi Fine",
+        "Grande",
+        "Fine",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "La condizione è falsa, quindi l'if viene saltato. L'ultima riga è fuori dal blocco e viene sempre eseguita.",
+       "code": "let n = 3;\nif (n > 5) {\n    console.log(\"Grande\");\n}\nconsole.log(\"Fine\");"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa delimita un blocco di codice in JavaScript?",
+       "options": [
+        "Le parentesi graffe { }",
+        "I due punti",
+        "Le parentesi quadre [ ]",
+        "L'indentazione"
+       ],
+       "answer": 0,
+       "explanation": "A differenza di Python, in JavaScript sono le graffe a delimitare il blocco."
+      }
+     ]
+    },
+    {
+     "title": "else if e operatori logici",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "B",
+        "Errore",
+        "A",
+        "C"
+       ],
+       "answer": 0,
+       "explanation": "70 non è >= 90, ma è >= 60: si ferma al primo ramo vero.",
+       "code": "let p = 70;\nif (p >= 90) {\n    console.log(\"A\");\n} else if (p >= 60) {\n    console.log(\"B\");\n} else {\n    console.log(\"C\");\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: devono essere vere entrambe le condizioni",
+       "template": [
+        "if (x > 0 ___ x < 10) {",
+        "    console.log(\"Tra 0 e 10\");",
+        "}"
+       ],
+       "bank": [
+        "&&",
+        "||",
+        "!",
+        "=="
+       ],
+       "blanks": [
+        "&&"
+       ],
+       "explanation": "&& significa e: servono entrambe le condizioni."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quanto vale true && false?",
+       "options": [
+        "false",
+        "Errore",
+        "true",
+        "undefined"
+       ],
+       "answer": 0,
+       "explanation": "Con && basta una condizione falsa per rendere falso il risultato."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "Si",
+        "No",
+        "Niente"
+       ],
+       "answer": 1,
+       "explanation": "Con || basta che una condizione sia vera: b > 5 lo è.",
+       "code": "let a = 2;\nlet b = 9;\nif (a > 5 || b > 5) {\n    console.log(\"Si\");\n} else {\n    console.log(\"No\");\n}"
+      },
+      {
+       "type": "order",
+       "prompt": "Il numero n esiste già. Ordina per stampare Pari se è pari, altrimenti Dispari",
+       "lines": [
+        "if (n % 2 === 0) {",
+        "    console.log(\"Pari\");",
+        "} else {",
+        "    console.log(\"Dispari\");",
+        "}"
+       ],
+       "explanation": "% dà il resto della divisione: un numero pari ha resto 0 con 2."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa fa l'operatore !?",
+       "options": [
+        "Confronta due testi",
+        "Somma due numeri",
+        "Stampa un messaggio",
+        "Inverte vero in falso e viceversa"
+       ],
+       "answer": 3,
+       "explanation": "!true vale false e !false vale true."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cicli",
+   "subtitle": "Ripetere senza fatica",
+   "lessons": [
+    {
+     "title": "for",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "0, 1, 2, 3",
+        "Errore",
+        "1, 2, 3",
+        "0, 1, 2 su tre righe"
+       ],
+       "answer": 3,
+       "explanation": "i parte da 0, il ciclo gira finché i < 3 e a ogni giro i aumenta di 1.",
+       "code": "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Ripeti il messaggio 5 volte",
+       "template": [
+        "___ (let i = 0; i < 5; i++) {",
+        "    console.log(\"Ciao\");",
+        "}"
+       ],
+       "bank": [
+        "for",
+        "if",
+        "while",
+        "do"
+       ],
+       "blanks": [
+        "for"
+       ],
+       "explanation": "for ripete il blocco finché la condizione è vera."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quante volte stampa Hey?",
+       "options": [
+        "4",
+        "Infinite",
+        "5",
+        "3"
+       ],
+       "answer": 0,
+       "explanation": "i vale 0, 1, 2, 3: il blocco gira quattro volte.",
+       "code": "for (let i = 0; i < 4; i++) {\n    console.log(\"Hey\");\n}"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare i numeri da 1 a 3",
+       "lines": [
+        "for (let n = 1; n <= 3; n++) {",
+        "    console.log(n);",
+        "}"
+       ],
+       "explanation": "n parte da 1 e il ciclo continua finché n <= 3."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3",
+        "Errore",
+        "0, 1, 2, 3",
+        "6"
+       ],
+       "answer": 3,
+       "explanation": "0+1+2+3 = 6. Il console.log è fuori dal ciclo: stampa una volta sola.",
+       "code": "let totale = 0;\nfor (let i = 0; i < 4; i++) {\n    totale = totale + i;\n}\nconsole.log(totale);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa significa i++?",
+       "options": [
+        "Aumenta i di 1",
+        "Confronta i con 1",
+        "Raddoppia i",
+        "Azzera i"
+       ],
+       "answer": 0,
+       "explanation": "i++ è la scorciatoia di i = i + 1."
+      }
+     ]
+    },
+    {
+     "title": "while",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "1, 2, 3",
+        "Va avanti all'infinito",
+        "3, 2, 1",
+        "3, 2, 1, 0"
+       ],
+       "answer": 2,
+       "explanation": "Il ciclo gira finché n > 0 e a ogni giro n diminuisce di 1.",
+       "code": "let n = 3;\nwhile (n > 0) {\n    console.log(n);\n    n = n - 1;\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il ciclo",
+       "template": [
+        "let n = 0;",
+        "___ (n < 3) {",
+        "    n = n + 1;",
+        "}"
+       ],
+       "bank": [
+        "while",
+        "for",
+        "if",
+        "do"
+       ],
+       "blanks": [
+        "while"
+       ],
+       "explanation": "while ripete il blocco finché la condizione resta vera."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede se dimentichi di cambiare n dentro un while (n > 0)?",
+       "options": [
+        "Non succede nulla",
+        "Stampa una volta sola",
+        "Il ciclo non finisce mai",
+        "Si ferma subito"
+       ],
+       "answer": 2,
+       "explanation": "La condizione resta sempre vera: è un ciclo infinito."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione esce subito da un ciclo?",
+       "options": [
+        "exit",
+        "break",
+        "stop",
+        "end"
+       ],
+       "answer": 1,
+       "explanation": "break interrompe il ciclo."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma per contare da 1 a 3",
+       "lines": [
+        "let n = 1;",
+        "while (n <= 3) {",
+        "    console.log(n);",
+        "    n = n + 1;",
+        "}"
+       ],
+       "explanation": "Si parte da un valore, si controlla la condizione, si stampa e si aggiorna n."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quando conviene usare for invece di while?",
+       "options": [
+        "Mai",
+        "Quando vuoi un errore",
+        "Solo con i testi",
+        "Quando sai quante volte ripetere"
+       ],
+       "answer": 3,
+       "explanation": "for è ideale con un numero noto di ripetizioni; while quando dipende da una condizione."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Array e funzioni",
+   "subtitle": "Il tuo primo programma completo",
+   "lessons": [
+    {
+     "title": "Array",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "pera",
+        "uva",
+        "mela",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "Gli indici partono da 0: il primo elemento è frutti[0].",
+       "code": "let frutti = [\"mela\", \"pera\", \"uva\"];\nconsole.log(frutti[0]);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3",
+        "Errore",
+        "2",
+        "4"
+       ],
+       "answer": 0,
+       "explanation": "length, senza parentesi, dà il numero di elementi.",
+       "code": "console.log([5, 6, 7].length);"
+      },
+      {
+       "type": "fill",
+       "prompt": "Aggiungi un elemento in fondo all'array",
+       "template": [
+        "let numeri = [1, 2];",
+        "numeri.___(3);"
+       ],
+       "bank": [
+        "push",
+        "append",
+        "add",
+        "insert"
+       ],
+       "blanks": [
+        "push"
+       ],
+       "explanation": "In JavaScript si usa push, non append."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "undefined",
+        "mela",
+        "uva",
+        "pera"
+       ],
+       "answer": 2,
+       "explanation": "L'ultimo elemento ha indice length - 1.",
+       "code": "let frutti = [\"mela\", \"pera\", \"uva\"];\nconsole.log(frutti[frutti.length - 1]);"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare ogni colore dell'array",
+       "lines": [
+        "let colori = [\"rosso\", \"blu\"];",
+        "for (let c of colori) {",
+        "    console.log(c);",
+        "}"
+       ],
+       "explanation": "for...of scorre direttamente gli elementi di un array."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "1",
+        "2",
+        "3"
+       ],
+       "answer": 3,
+       "explanation": "push ha aggiunto un elemento: ora l'array ne ha tre.",
+       "code": "let l = [1, 2];\nl.push(3);\nconsole.log(l.length);"
+      }
+     ]
+    },
+    {
+     "title": "Funzioni",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Quale parola chiave definisce una funzione?",
+       "options": [
+        "func",
+        "def",
+        "function",
+        "fn"
+       ],
+       "answer": 2,
+       "explanation": "In JavaScript una funzione si crea con function."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa la definizione della funzione",
+       "template": [
+        "___ saluta() {",
+        "    console.log(\"Ciao\");",
+        "}",
+        "",
+        "saluta();"
+       ],
+       "bank": [
+        "function",
+        "def",
+        "let",
+        "return"
+       ],
+       "blanks": [
+        "function"
+       ],
+       "explanation": "function, il nome e le parentesi creano la funzione; l'ultima riga la chiama."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "undefined",
+        "Errore",
+        "4",
+        "8"
+       ],
+       "answer": 3,
+       "explanation": "La funzione restituisce il doppio di 4.",
+       "code": "function doppio(x) {\n    return x * 2;\n}\n\nconsole.log(doppio(4));"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa fa return?",
+       "options": [
+        "Crea una variabile",
+        "Chiude il programma",
+        "Stampa a schermo",
+        "Restituisce un valore a chi ha chiamato la funzione"
+       ],
+       "answer": 3,
+       "explanation": "console.log mostra un valore, return lo restituisce per poterlo usare altrove."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: la funzione deve restituire la somma",
+       "template": [
+        "function somma(a, b) {",
+        "    ___ a + b;",
+        "}",
+        "",
+        "console.log(somma(2, 3));"
+       ],
+       "bank": [
+        "return",
+        "console.log",
+        "function",
+        "if"
+       ],
+       "blanks": [
+        "return"
+       ],
+       "explanation": "Con return il risultato torna al punto in cui la funzione è stata chiamata."
+      },
+      {
+       "type": "order",
+       "prompt": "Mini-programma finale: stampa il quadrato di 4",
+       "lines": [
+        "function quadrato(n) {",
+        "    return n * n;",
+        "}",
+        "console.log(quadrato(4));"
+       ],
+       "explanation": "Prima definisci la funzione, poi la chiami: hai scritto un programma completo!"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

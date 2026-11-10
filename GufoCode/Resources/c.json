@@ -1,0 +1,880 @@
+{
+ "language": "c",
+ "units": [
+  {
+   "title": "Primi passi",
+   "subtitle": "Fai parlare il computer",
+   "lessons": [
+    {
+     "title": "Il primo printf",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione stampa un testo in C?",
+       "options": [
+        "console.log(\"Ciao\")",
+        "printf(\"Ciao\");",
+        "print(\"Ciao\")",
+        "cout << \"Ciao\""
+       ],
+       "answer": 1,
+       "explanation": "In C si usa printf, che arriva dalla libreria stdio.h."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Ciao mondo",
+        "\"Ciao mondo\"",
+        "Niente",
+        "printf"
+       ],
+       "answer": 0,
+       "explanation": "printf mostra il testo senza le virgolette.",
+       "code": "#include <stdio.h>\n\nint main() {\n    printf(\"Ciao mondo\");\n    return 0;\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il codice per stampare Benvenuto",
+       "template": [
+        "___(\"Benvenuto\");"
+       ],
+       "bank": [
+        "printf",
+        "print",
+        "echo",
+        "say"
+       ],
+       "blanks": [
+        "printf"
+       ],
+       "explanation": "Il nome della funzione è printf."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma minimo che stampa Ciao",
+       "lines": [
+        "#include <stdio.h>",
+        "int main() {",
+        "    printf(\"Ciao\");",
+        "    return 0;",
+        "}"
+       ],
+       "explanation": "Prima l'include, poi la funzione main con il codice e il return 0 finale."
+      },
+      {
+       "type": "choice",
+       "prompt": "A cosa serve #include <stdio.h>?",
+       "options": [
+        "A scrivere commenti",
+        "A poter usare funzioni come printf",
+        "A creare variabili",
+        "A fare un ciclo"
+       ],
+       "answer": 1,
+       "explanation": "Include la libreria standard di input/output."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede se dimentichi il punto e virgola dopo un'istruzione?",
+       "options": [
+        "Il programma si ferma a metà",
+        "Errore di compilazione",
+        "Stampa lo stesso",
+        "Niente"
+       ],
+       "answer": 1,
+       "explanation": "In C ogni istruzione termina con ;, altrimenti il compilatore dà errore."
+      }
+     ]
+    },
+    {
+     "title": "Testi e a capo",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa fa \\n dentro un printf?",
+       "options": [
+        "Cancella il testo",
+        "Stampa una n",
+        "Va a capo",
+        "Chiude il programma"
+       ],
+       "answer": 2,
+       "explanation": "\\n è il carattere di nuova riga: printf non va a capo da solo."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Niente",
+        "AB su una riga",
+        "A e B su due righe",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "Ogni \\n manda a capo, quindi B finisce sulla riga successiva.",
+       "code": "printf(\"A\\n\");\nprintf(\"B\\n\");"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa per andare a capo dopo Ciao",
+       "template": [
+        "printf(\"Ciao___\");"
+       ],
+       "bank": [
+        "\\n",
+        "/n",
+        "n",
+        "\\t"
+       ],
+       "blanks": [
+        "\\n"
+       ],
+       "explanation": "La sequenza di nuova riga si scrive con la barra inversa: \\n."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale commento è valido in C?",
+       "options": [
+        "# commento",
+        "-- commento",
+        "<!-- commento -->",
+        "// commento"
+       ],
+       "answer": 3,
+       "explanation": "// per una riga e /* ... */ per più righe."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale riga è scritta correttamente?",
+       "options": [
+        "printf(ok\");",
+        "printf(\"ok\");",
+        "printf(\"ok;",
+        "Printf(\"ok\");"
+       ],
+       "answer": 1,
+       "explanation": "Servono le virgolette ben chiuse e il nome esatto: in C maiuscole e minuscole contano."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare Uno, poi Due, poi Tre, ognuno su una riga",
+       "lines": [
+        "printf(\"Uno\\n\");",
+        "printf(\"Due\\n\");",
+        "printf(\"Tre\\n\");"
+       ],
+       "explanation": "L'ordine delle righe è l'ordine dei messaggi."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Variabili",
+   "subtitle": "Scatole con un nome",
+   "lessons": [
+    {
+     "title": "Tipi base",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa fa questa riga?",
+       "options": [
+        "Crea una funzione",
+        "Stampa 5",
+        "Confronta punti con 5",
+        "Crea un intero punti con valore 5"
+       ],
+       "answer": 3,
+       "explanation": "int dichiara un numero intero; = gli assegna il valore.",
+       "code": "int punti = 5;"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "punti",
+        "%d",
+        "10",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "%d è il segnaposto per un intero: viene sostituito dal valore di punti.",
+       "code": "int punti = 10;\nprintf(\"%d\", punti);"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il segnaposto per stampare un intero",
+       "template": [
+        "int n = 4;",
+        "printf(\"___\", n);"
+       ],
+       "bank": [
+        "%d",
+        "%f",
+        "%c",
+        "%s"
+       ],
+       "blanks": [
+        "%d"
+       ],
+       "explanation": "%d serve per i numeri interi."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale tipo serve per un numero con la virgola?",
+       "options": [
+        "int",
+        "char",
+        "void",
+        "float"
+       ],
+       "answer": 3,
+       "explanation": "float (o double) memorizza numeri decimali."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale tipo contiene un singolo carattere?",
+       "options": [
+        "int",
+        "text",
+        "char",
+        "string"
+       ],
+       "answer": 2,
+       "explanation": "In C un carattere è un char, scritto tra apici singoli come 'a'."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare il numero 7",
+       "lines": [
+        "int numero = 7;",
+        "printf(\"%d\", numero);"
+       ],
+       "explanation": "Prima si crea la variabile, poi la si usa."
+      }
+     ]
+    },
+    {
+     "title": "Operatori",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "34",
+        "3 4",
+        "7",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "Con i numeri il + fa la somma.",
+       "code": "printf(\"%d\", 3 + 4);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3",
+        "2",
+        "Errore",
+        "2.5"
+       ],
+       "answer": 1,
+       "explanation": "Tra due interi la divisione è intera: il risultato è 2.",
+       "code": "printf(\"%d\", 5 / 2);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "1",
+        "2",
+        "0"
+       ],
+       "answer": 1,
+       "explanation": "% dà il resto della divisione: 7 diviso 3 fa 2 con resto 1.",
+       "code": "printf(\"%d\", 7 % 3);"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa per stampare il doppio di x",
+       "template": [
+        "int x = 6;",
+        "printf(\"%d\", x ___ 2);"
+       ],
+       "bank": [
+        "*",
+        "+",
+        "/",
+        "%"
+       ],
+       "blanks": [
+        "*"
+       ],
+       "explanation": "Il simbolo * moltiplica."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "5",
+        "Errore",
+        "3",
+        "8"
+       ],
+       "answer": 3,
+       "explanation": "L'ultimo valore assegnato sostituisce quello precedente.",
+       "code": "int a = 5;\na = 8;\nprintf(\"%d\", a);"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare la somma di a e b",
+       "lines": [
+        "int a = 2;",
+        "int b = 3;",
+        "printf(\"%d\", a + b);"
+       ],
+       "explanation": "Le variabili devono esistere prima di essere usate."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Condizioni",
+   "subtitle": "Il programma sceglie",
+   "lessons": [
+    {
+     "title": "if ed else",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Niente",
+        "Minorenne",
+        "Maggiorenne",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "20 >= 18 è vero, quindi viene eseguito il blocco dell'if.",
+       "code": "int eta = 20;\nif (eta >= 18) {\n    printf(\"Maggiorenne\");\n} else {\n    printf(\"Minorenne\");\n}"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale operatore controlla se due valori sono uguali?",
+       "options": [
+        "=",
+        "!=",
+        "==",
+        "=>"
+       ],
+       "answer": 2,
+       "explanation": "Un solo = assegna un valore, due == confrontano."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa la condizione",
+       "template": [
+        "int voto = 8;",
+        "___ (voto >= 6) {",
+        "    printf(\"Promosso\");",
+        "}"
+       ],
+       "bank": [
+        "if",
+        "else",
+        "for",
+        "while"
+       ],
+       "blanks": [
+        "if"
+       ],
+       "explanation": "if apre la condizione, tra parentesi tonde, e il blocco sta tra graffe."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma",
+       "lines": [
+        "int temp = 30;",
+        "if (temp > 25) {",
+        "    printf(\"Fa caldo\");",
+        "}"
+       ],
+       "explanation": "Il blocco da eseguire sta tra le graffe dell'if."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Grande",
+        "Grande e poi Fine",
+        "Errore",
+        "Fine"
+       ],
+       "answer": 3,
+       "explanation": "La condizione è falsa, quindi l'if viene saltato. L'ultima riga è fuori dal blocco e viene sempre eseguita.",
+       "code": "int n = 3;\nif (n > 5) {\n    printf(\"Grande\");\n}\nprintf(\"Fine\");"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede con if (x = 5)?",
+       "options": [
+        "Assegna 5 a x e la condizione risulta vera",
+        "Confronta x con 5",
+        "Dà sempre errore",
+        "Non succede niente"
+       ],
+       "answer": 0,
+       "explanation": "Un solo = assegna: è un errore molto comune, serve =="
+      }
+     ]
+    },
+    {
+     "title": "else if e operatori logici",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "B",
+        "A",
+        "C",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "70 non è >= 90, ma è >= 60: si ferma al primo ramo vero.",
+       "code": "int p = 70;\nif (p >= 90) {\n    printf(\"A\");\n} else if (p >= 60) {\n    printf(\"B\");\n} else {\n    printf(\"C\");\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: devono essere vere entrambe le condizioni",
+       "template": [
+        "if (x > 0 ___ x < 10) {",
+        "    printf(\"Tra 0 e 10\");",
+        "}"
+       ],
+       "bank": [
+        "&&",
+        "||",
+        "!",
+        "=="
+       ],
+       "blanks": [
+        "&&"
+       ],
+       "explanation": "&& significa e: servono entrambe le condizioni."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quanto vale (1 && 0)?",
+       "options": [
+        "Errore",
+        "1",
+        "Niente",
+        "0"
+       ],
+       "answer": 3,
+       "explanation": "In C vero è 1 (o un valore diverso da 0) e falso è 0. Con && basta un falso per avere falso."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "No",
+        "Niente",
+        "Si",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "Con || basta che una condizione sia vera: b > 5 lo è.",
+       "code": "int a = 2;\nint b = 9;\nif (a > 5 || b > 5) {\n    printf(\"Si\");\n} else {\n    printf(\"No\");\n}"
+      },
+      {
+       "type": "order",
+       "prompt": "Il numero n esiste già. Ordina per stampare Pari se è pari, altrimenti Dispari",
+       "lines": [
+        "if (n % 2 == 0) {",
+        "    printf(\"Pari\");",
+        "} else {",
+        "    printf(\"Dispari\");",
+        "}"
+       ],
+       "explanation": "% dà il resto della divisione: un numero pari ha resto 0 con 2."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quanto vale !0?",
+       "options": [
+        "0",
+        "-1",
+        "Errore",
+        "1"
+       ],
+       "answer": 3,
+       "explanation": "! inverte: il falso (0) diventa vero (1)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cicli",
+   "subtitle": "Ripetere senza fatica",
+   "lessons": [
+    {
+     "title": "for",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "1, 2, 3",
+        "Errore",
+        "0, 1, 2, 3",
+        "0, 1, 2 su tre righe"
+       ],
+       "answer": 3,
+       "explanation": "i parte da 0, il ciclo gira finché i < 3 e a ogni giro i aumenta di 1.",
+       "code": "for (int i = 0; i < 3; i++) {\n    printf(\"%d\\n\", i);\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Ripeti il messaggio 5 volte",
+       "template": [
+        "___ (int i = 0; i < 5; i++) {",
+        "    printf(\"Ciao\\n\");",
+        "}"
+       ],
+       "bank": [
+        "for",
+        "if",
+        "while",
+        "do"
+       ],
+       "blanks": [
+        "for"
+       ],
+       "explanation": "for ripete il blocco finché la condizione è vera."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quante volte stampa Hey?",
+       "options": [
+        "3",
+        "4",
+        "5",
+        "Infinite"
+       ],
+       "answer": 1,
+       "explanation": "i vale 0, 1, 2, 3: il blocco gira quattro volte.",
+       "code": "for (int i = 0; i < 4; i++) {\n    printf(\"Hey\\n\");\n}"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare i numeri da 1 a 3",
+       "lines": [
+        "for (int n = 1; n <= 3; n++) {",
+        "    printf(\"%d\\n\", n);",
+        "}"
+       ],
+       "explanation": "n parte da 1 e il ciclo continua finché n <= 3."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3",
+        "6",
+        "Errore",
+        "0, 1, 2, 3"
+       ],
+       "answer": 1,
+       "explanation": "0+1+2+3 = 6. Il printf è fuori dal ciclo: stampa una volta sola.",
+       "code": "int totale = 0;\nfor (int i = 0; i < 4; i++) {\n    totale = totale + i;\n}\nprintf(\"%d\", totale);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa significa i++?",
+       "options": [
+        "Azzera i",
+        "Confronta i con 1",
+        "Aumenta i di 1",
+        "Raddoppia i"
+       ],
+       "answer": 2,
+       "explanation": "i++ è la scorciatoia di i = i + 1."
+      }
+     ]
+    },
+    {
+     "title": "while",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3, 2, 1",
+        "1, 2, 3",
+        "Va avanti all'infinito",
+        "3, 2, 1, 0"
+       ],
+       "answer": 0,
+       "explanation": "Il ciclo gira finché n > 0 e a ogni giro n diminuisce di 1.",
+       "code": "int n = 3;\nwhile (n > 0) {\n    printf(\"%d\\n\", n);\n    n = n - 1;\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il ciclo",
+       "template": [
+        "int n = 0;",
+        "___ (n < 3) {",
+        "    n = n + 1;",
+        "}"
+       ],
+       "bank": [
+        "while",
+        "for",
+        "if",
+        "do"
+       ],
+       "blanks": [
+        "while"
+       ],
+       "explanation": "while ripete il blocco finché la condizione resta vera."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede se dimentichi di cambiare n dentro un while (n > 0)?",
+       "options": [
+        "Stampa una volta sola",
+        "Il ciclo non finisce mai",
+        "Si ferma subito",
+        "Non succede nulla"
+       ],
+       "answer": 1,
+       "explanation": "La condizione resta sempre vera: è un ciclo infinito."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione esce subito da un ciclo?",
+       "options": [
+        "stop",
+        "break",
+        "end",
+        "exit"
+       ],
+       "answer": 1,
+       "explanation": "break interrompe il ciclo."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma per contare da 1 a 3",
+       "lines": [
+        "int n = 1;",
+        "while (n <= 3) {",
+        "    printf(\"%d\\n\", n);",
+        "    n = n + 1;",
+        "}"
+       ],
+       "explanation": "Si parte da un valore, si controlla la condizione, si stampa e si aggiorna n."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quando conviene usare for invece di while?",
+       "options": [
+        "Quando sai quante volte ripetere",
+        "Solo con i testi",
+        "Quando vuoi un errore",
+        "Mai"
+       ],
+       "answer": 0,
+       "explanation": "for è ideale con un numero noto di ripetizioni; while quando dipende da una condizione."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Array e funzioni",
+   "subtitle": "Il tuo primo programma completo",
+   "lessons": [
+    {
+     "title": "Array",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "7",
+        "8",
+        "Errore",
+        "9"
+       ],
+       "answer": 0,
+       "explanation": "Gli indici partono da 0: il primo elemento è voti[0].",
+       "code": "int voti[3] = {7, 8, 9};\nprintf(\"%d\", voti[0]);"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quanti elementi contiene int a[5]?",
+       "options": [
+        "1",
+        "5",
+        "4",
+        "6"
+       ],
+       "answer": 1,
+       "explanation": "Cinque elementi, con indici da 0 a 4."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa con l'indice dell'ultimo elemento",
+       "template": [
+        "int a[3] = {1, 2, 3};",
+        "printf(\"%d\", a[___]);"
+       ],
+       "bank": [
+        "2",
+        "3",
+        "1",
+        "0"
+       ],
+       "blanks": [
+        "2"
+       ],
+       "explanation": "Gli indici vanno da 0 a 2: l'ultimo è 2 e a[2] vale 3."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "12",
+        "3",
+        "6"
+       ],
+       "answer": 1,
+       "explanation": "Il ciclo somma tutti gli elementi: 2 + 4 + 6 = 12.",
+       "code": "int a[3] = {2, 4, 6};\nint tot = 0;\nfor (int i = 0; i < 3; i++) {\n    tot = tot + a[i];\n}\nprintf(\"%d\", tot);"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare ogni elemento dell'array",
+       "lines": [
+        "int a[2] = {5, 6};",
+        "for (int i = 0; i < 2; i++) {",
+        "    printf(\"%d\\n\", a[i]);",
+        "}"
+       ],
+       "explanation": "Un ciclo for con l'indice scorre l'array dall'inizio alla fine."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede leggendo a[10] in un array di 3 elementi?",
+       "options": [
+        "Il compilatore lo corregge",
+        "Restituisce l'ultimo elemento",
+        "Comportamento indefinito, un bug pericoloso",
+        "Restituisce 0"
+       ],
+       "answer": 2,
+       "explanation": "C non controlla i limiti degli array: leggere fuori dall'array è un errore grave."
+      }
+     ]
+    },
+    {
+     "title": "Funzioni",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa indica int davanti al nome di una funzione?",
+       "options": [
+        "Un ciclo",
+        "Il tipo del valore restituito",
+        "Una variabile",
+        "Un commento"
+       ],
+       "answer": 1,
+       "explanation": "Il tipo prima del nome dice cosa restituisce la funzione."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "4",
+        "Errore",
+        "0",
+        "8"
+       ],
+       "answer": 3,
+       "explanation": "La funzione restituisce il doppio di 4.",
+       "code": "int doppio(int x) {\n    return x * 2;\n}\n\nint main() {\n    printf(\"%d\", doppio(4));\n    return 0;\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: la funzione deve restituire la somma",
+       "template": [
+        "int somma(int a, int b) {",
+        "    ___ a + b;",
+        "}"
+       ],
+       "bank": [
+        "return",
+        "printf",
+        "int",
+        "if"
+       ],
+       "blanks": [
+        "return"
+       ],
+       "explanation": "Con return il risultato torna a chi ha chiamato la funzione."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale tipo si usa per una funzione che non restituisce nulla?",
+       "options": [
+        "empty",
+        "void",
+        "null",
+        "none"
+       ],
+       "answer": 1,
+       "explanation": "void significa nessun valore restituito."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa fa return?",
+       "options": [
+        "Crea una variabile",
+        "Restituisce un valore a chi ha chiamato la funzione",
+        "Apre un ciclo",
+        "Stampa a schermo"
+       ],
+       "answer": 1,
+       "explanation": "printf mostra un valore, return lo restituisce per poterlo usare altrove."
+      },
+      {
+       "type": "order",
+       "prompt": "Mini-programma finale: stampa il quadrato di 4",
+       "lines": [
+        "int quadrato(int n) {",
+        "    return n * n;",
+        "}",
+        "int main() {",
+        "    printf(\"%d\", quadrato(4));",
+        "    return 0;",
+        "}"
+       ],
+       "explanation": "Prima definisci la funzione, poi la chiami dal main: hai scritto un programma completo!"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

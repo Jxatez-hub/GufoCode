@@ -872,6 +872,536 @@
      ]
     }
    ]
+  },
+  {
+   "title": "Stringhe",
+   "subtitle": "Lavorare con i testi",
+   "lessons": [
+    {
+     "title": "Metodi dei testi",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "4",
+        "6",
+        "5",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "len() conta i caratteri, segni di punteggiatura compresi.",
+       "code": "print(len(\"Ciao!\"))"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "CIAO",
+        "Errore",
+        "ciao",
+        "Ciao"
+       ],
+       "answer": 0,
+       "explanation": "upper() restituisce il testo in maiuscolo.",
+       "code": "print(\"ciao\".upper())"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa per scrivere il testo in minuscolo",
+       "template": [
+        "print(\"PYTHON\".___())"
+       ],
+       "bank": [
+        "lower",
+        "upper",
+        "small",
+        "min"
+       ],
+       "blanks": [
+        "lower"
+       ],
+       "explanation": "lower() converte il testo in minuscolo."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "n",
+        "y",
+        "P"
+       ],
+       "answer": 3,
+       "explanation": "Anche nei testi gli indici partono da 0.",
+       "code": "s = \"Python\"\nprint(s[0])"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Python",
+        "Pyth",
+        "Pyt",
+        "yth"
+       ],
+       "answer": 2,
+       "explanation": "[0:3] prende i caratteri dall'indice 0 fino a prima del 3.",
+       "code": "print(\"Python\"[0:3])"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Mario Ciao",
+        "Ciao Mario",
+        "Ciao Luca",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "replace sostituisce una parte del testo con un'altra.",
+       "code": "print(\"Ciao Luca\".replace(\"Luca\", \"Mario\"))"
+      }
+     ]
+    },
+    {
+     "title": "f-string e input",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Ciao {nome}, hai {eta} anni",
+        "Ciao Anna, hai 20 anni",
+        "Ciao nome, hai eta anni",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "Con la f davanti al testo, le graffe vengono sostituite dal valore delle variabili.",
+       "code": "nome = \"Anna\"\neta = 20\nprint(f\"Ciao {nome}, hai {eta} anni\")"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa per leggere un testo scritto dall'utente",
+       "template": [
+        "nome = ___(\"Come ti chiami? \")",
+        "print(\"Ciao \" + nome)"
+       ],
+       "bank": [
+        "input",
+        "print",
+        "read",
+        "ask"
+       ],
+       "blanks": [
+        "input"
+       ],
+       "explanation": "input() mostra la domanda e restituisce ciò che l'utente scrive."
+      },
+      {
+       "type": "choice",
+       "prompt": "Di che tipo è il valore restituito da input()?",
+       "options": [
+        "int (intero)",
+        "bool",
+        "float (decimale)",
+        "str (testo)"
+       ],
+       "answer": 3,
+       "explanation": "input() restituisce sempre un testo: per avere un numero serve int()."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "7 8",
+        "78",
+        "15",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "int() trasforma il testo in numero, quindi il + somma.",
+       "code": "x = int(\"7\")\nprint(x + 8)"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "None",
+        "True",
+        "False"
+       ],
+       "answer": 2,
+       "explanation": "in controlla se un pezzo di testo è contenuto in un altro.",
+       "code": "print(\"yth\" in \"Python\")"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma: chiede l'età e stampa l'età dell'anno prossimo",
+       "lines": [
+        "eta = int(input(\"Età? \"))",
+        "prossima = eta + 1",
+        "print(prossima)"
+       ],
+       "explanation": "Prima si legge e si converte il valore, poi lo si usa."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dizionari",
+   "subtitle": "Coppie chiave e valore",
+   "lessons": [
+    {
+     "title": "Chiavi e valori",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Rosso",
+        "None",
+        "colore",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "Si accede al valore usando la sua chiave tra parentesi quadre.",
+       "code": "auto = {\"colore\": \"Rosso\", \"anni\": 3}\nprint(auto[\"colore\"])"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale riga crea un dizionario?",
+       "options": [
+        "{\"nome\": \"Anna\", \"eta\": 20}",
+        "(\"nome\", \"Anna\")",
+        "[\"nome\": \"Anna\"]",
+        "nome = Anna"
+       ],
+       "answer": 0,
+       "explanation": "Un dizionario usa le graffe con coppie chiave: valore separate da virgole."
+      },
+      {
+       "type": "fill",
+       "prompt": "Aggiungi una nuova coppia al dizionario",
+       "template": [
+        "voti = {\"mate\": 8}",
+        "voti[___] = 9"
+       ],
+       "bank": [
+        "\"storia\"",
+        "storia",
+        "9",
+        "mate"
+       ],
+       "blanks": [
+        "\"storia\""
+       ],
+       "explanation": "Assegnando un valore a una chiave nuova, la si aggiunge al dizionario."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "2",
+        "Errore",
+        "3",
+        "1"
+       ],
+       "answer": 0,
+       "explanation": "len conta le coppie del dizionario.",
+       "code": "d = {\"a\": 1, \"b\": 2}\nprint(len(d))"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "True",
+        "False",
+        "None"
+       ],
+       "answer": 1,
+       "explanation": "In un dizionario, in controlla le chiavi.",
+       "code": "d = {\"a\": 1}\nprint(\"a\" in d)"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare l'età di Luca",
+       "lines": [
+        "persone = {\"Luca\": 25, \"Anna\": 30}",
+        "eta = persone[\"Luca\"]",
+        "print(eta)"
+       ],
+       "explanation": "Si crea il dizionario, si legge il valore con la chiave e lo si stampa."
+      }
+     ]
+    },
+    {
+     "title": "Scorrere i dizionari",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "a b su una riga",
+        "a poi b su due righe",
+        "1 poi 2 su due righe"
+       ],
+       "answer": 2,
+       "explanation": "Scorrendo un dizionario con for si ottengono le chiavi.",
+       "code": "d = {\"a\": 1, \"b\": 2}\nfor k in d:\n    print(k)"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa per scorrere chiavi e valori",
+       "template": [
+        "d = {\"x\": 1}",
+        "for chiave, valore in d.___():",
+        "    print(chiave, valore)"
+       ],
+       "bank": [
+        "items",
+        "keys",
+        "all",
+        "list"
+       ],
+       "blanks": [
+        "items"
+       ],
+       "explanation": "items() restituisce ogni coppia chiave-valore."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "False",
+        "0",
+        "Errore",
+        "None"
+       ],
+       "answer": 1,
+       "explanation": "get restituisce un valore di riserva se la chiave non esiste, senza errore.",
+       "code": "d = {\"a\": 1}\nprint(d.get(\"z\", 0))"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede con d[\"z\"] se la chiave z non esiste?",
+       "options": [
+        "Restituisce 0",
+        "Restituisce None",
+        "Errore KeyError",
+        "Crea la chiave"
+       ],
+       "answer": 2,
+       "explanation": "Leggere una chiave inesistente con le parentesi quadre dà un errore."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "1",
+        "Errore",
+        "2",
+        "3"
+       ],
+       "answer": 3,
+       "explanation": "values() restituisce solo i valori: 1 + 2 = 3.",
+       "code": "punti = {\"a\": 1, \"b\": 2}\ntot = 0\nfor v in punti.values():\n    tot = tot + v\nprint(tot)"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare ogni chiave con il suo valore",
+       "lines": [
+        "d = {\"x\": 1, \"y\": 2}",
+        "for k, v in d.items():",
+        "    print(k, v)"
+       ],
+       "explanation": "items() dà chiave e valore insieme a ogni giro del ciclo."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Verso il progetto",
+   "subtitle": "Errori e programma finale",
+   "lessons": [
+    {
+     "title": "Gestire gli errori",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Niente",
+        "Il programma si interrompe con un errore",
+        "0",
+        "Errore!"
+       ],
+       "answer": 3,
+       "explanation": "Dividere per zero causa un errore, ma except lo cattura ed esegue il suo blocco.",
+       "code": "try:\n    print(10 / 0)\nexcept:\n    print(\"Errore!\")"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il blocco per gestire gli errori",
+       "template": [
+        "___:",
+        "    n = int(\"abc\")",
+        "except:",
+        "    print(\"Non è un numero\")"
+       ],
+       "bank": [
+        "try",
+        "if",
+        "else",
+        "for"
+       ],
+       "blanks": [
+        "try"
+       ],
+       "explanation": "try prova a eseguire il codice; se c'è un errore passa a except."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede con int(\"abc\")?",
+       "options": [
+        "Restituisce abc",
+        "Restituisce None",
+        "Restituisce 0",
+        "Errore ValueError"
+       ],
+       "answer": 3,
+       "explanation": "Il testo abc non può diventare un numero, quindi Python segnala un errore."
+      },
+      {
+       "type": "choice",
+       "prompt": "A cosa serve except?",
+       "options": [
+        "A importare moduli",
+        "A creare un ciclo",
+        "A definire una funzione",
+        "A gestire l'errore senza far crollare il programma"
+       ],
+       "answer": 3,
+       "explanation": "Il blocco except dice cosa fare quando nel try succede un errore."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Niente",
+        "Errore",
+        "12",
+        "12 e poi Errore"
+       ],
+       "answer": 2,
+       "explanation": "La conversione riesce, quindi except non viene eseguito.",
+       "code": "try:\n    x = int(\"12\")\n    print(x)\nexcept:\n    print(\"Errore\")"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il blocco che stampa Valore non valido se la conversione fallisce",
+       "lines": [
+        "try:",
+        "    n = int(testo)",
+        "except:",
+        "    print(\"Valore non valido\")"
+       ],
+       "explanation": "try contiene il codice rischioso, except cosa fare in caso di errore."
+      }
+     ]
+    },
+    {
+     "title": "Il tuo programma",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "8.0",
+        "Errore",
+        "24",
+        "3"
+       ],
+       "answer": 0,
+       "explanation": "sum somma tutti gli elementi; dividendo per len si ottiene la media.",
+       "code": "voti = [7, 8, 9]\nmedia = sum(voti) / len(voti)\nprint(media)"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "8",
+        "9",
+        "7"
+       ],
+       "answer": 2,
+       "explanation": "max restituisce il valore più grande.",
+       "code": "print(max([7, 9, 8]))"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa la funzione che calcola la media",
+       "template": [
+        "def media(lista):",
+        "    return ___(lista) / len(lista)",
+        "",
+        "print(media([2, 4, 6]))"
+       ],
+       "bank": [
+        "sum",
+        "max",
+        "min",
+        "len"
+       ],
+       "blanks": [
+        "sum"
+       ],
+       "explanation": "Somma diviso quantità fa la media."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "2",
+        "3",
+        "5",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "split divide il testo negli spazi e restituisce una lista di parole.",
+       "code": "parole = \"ciao a tutti\".split()\nprint(len(parole))"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma che stampa il voto più alto",
+       "lines": [
+        "voti = [6, 9, 7]",
+        "migliore = max(voti)",
+        "print(\"Voto più alto:\", migliore)"
+       ],
+       "explanation": "Si crea la lista, si calcola il massimo e lo si stampa."
+      },
+      {
+       "type": "order",
+       "prompt": "Programma finale: stampa i numeri pari da 0 a n",
+       "lines": [
+        "def pari(n):",
+        "    for i in range(n + 1):",
+        "        if i % 2 == 0:",
+        "            print(i)",
+        "pari(6)"
+       ],
+       "explanation": "Hai usato funzioni, cicli e condizioni insieme: è un programma vero!"
+      }
+     ]
+    }
+   ]
   }
  ]
 }

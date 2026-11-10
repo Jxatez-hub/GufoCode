@@ -1,0 +1,889 @@
+{
+ "language": "swift",
+ "units": [
+  {
+   "title": "Primi passi",
+   "subtitle": "Fai parlare il computer",
+   "lessons": [
+    {
+     "title": "print",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione mostra un testo sullo schermo?",
+       "options": [
+        "echo(\"Ciao\")",
+        "printf(\"Ciao\")",
+        "console.log(\"Ciao\")",
+        "print(\"Ciao\")"
+       ],
+       "answer": 3,
+       "explanation": "In Swift si usa la funzione print()."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "print",
+        "\"Ciao mondo\"",
+        "Ciao mondo",
+        "Niente"
+       ],
+       "answer": 2,
+       "explanation": "print mostra il testo senza le virgolette.",
+       "code": "print(\"Ciao mondo\")"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il codice per stampare Benvenuto",
+       "template": [
+        "___(\"Benvenuto\")"
+       ],
+       "bank": [
+        "print",
+        "Print",
+        "say",
+        "log"
+       ],
+       "blanks": [
+        "print"
+       ],
+       "explanation": "Il nome della funzione è print, tutto minuscolo."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare prima Ciao e poi Come stai?",
+       "lines": [
+        "print(\"Ciao\")",
+        "print(\"Come stai?\")"
+       ],
+       "explanation": "Le righe vengono eseguite dall'alto verso il basso."
+      },
+      {
+       "type": "choice",
+       "prompt": "Serve il punto e virgola alla fine di ogni riga in Swift?",
+       "options": [
+        "Solo con print",
+        "Solo nei cicli",
+        "No, di solito si omette",
+        "Sì, sempre"
+       ],
+       "answer": 2,
+       "explanation": "In Swift il ; è facoltativo e normalmente non si scrive."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale riga è un commento?",
+       "options": [
+        "<!-- commento -->",
+        "-- commento",
+        "// commento",
+        "# commento"
+       ],
+       "answer": 2,
+       "explanation": "In Swift i commenti su una riga iniziano con //."
+      }
+     ]
+    },
+    {
+     "title": "Testi",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "CiaoLuca",
+        "Ciao + Luca",
+        "Errore",
+        "Ciao Luca"
+       ],
+       "answer": 3,
+       "explanation": "Il + tra testi li unisce. Il primo contiene già uno spazio dopo Ciao.",
+       "code": "print(\"Ciao \" + \"Luca\")"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il codice per stampare Hello",
+       "template": [
+        "// saluto",
+        "print(___)"
+       ],
+       "bank": [
+        "\"Hello\"",
+        "Hello",
+        "(Hello)",
+        "'Hello"
+       ],
+       "blanks": [
+        "\"Hello\""
+       ],
+       "explanation": "Il testo va scritto tra virgolette doppie."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede con print(Ciao)?",
+       "options": [
+        "Errore: Ciao non è stato dichiarato",
+        "Stampa Ciao",
+        "Stampa print",
+        "Non succede niente"
+       ],
+       "answer": 0,
+       "explanation": "Senza virgolette Swift cerca una variabile chiamata Ciao e non la trova."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare Uno, poi Due, poi Tre",
+       "lines": [
+        "print(\"Uno\")",
+        "print(\"Due\")",
+        "print(\"Tre\")"
+       ],
+       "explanation": "L'ordine delle righe è l'ordine dei messaggi."
+      },
+      {
+       "type": "choice",
+       "prompt": "Come si inserisce una variabile dentro un testo?",
+       "options": [
+        "\"Ciao %nome\"",
+        "\"Ciao \\(nome)\"",
+        "\"Ciao $nome\"",
+        "\"Ciao {nome}\""
+       ],
+       "answer": 1,
+       "explanation": "Con \\( ) dentro il testo: si chiama interpolazione."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "a+b",
+        "a b",
+        "Errore",
+        "ab"
+       ],
+       "answer": 3,
+       "explanation": "Il + unisce i testi senza aggiungere spazi.",
+       "code": "print(\"a\" + \"b\")"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Variabili",
+   "subtitle": "Scatole con un nome",
+   "lessons": [
+    {
+     "title": "let e var",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa fa questa riga?",
+       "options": [
+        "Confronta punti con 5",
+        "Crea una funzione",
+        "Crea una variabile punti con valore 5",
+        "Stampa 5"
+       ],
+       "answer": 2,
+       "explanation": "var crea una variabile il cui valore si può cambiare.",
+       "code": "var punti = 5"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "10",
+        "5",
+        "punti",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "print mostra il valore della variabile, non il suo nome.",
+       "code": "var punti = 10\nprint(punti)"
+      },
+      {
+       "type": "fill",
+       "prompt": "Crea una costante, cioè un valore che non cambia",
+       "template": [
+        "___ pi = 3.14"
+       ],
+       "bank": [
+        "let",
+        "var",
+        "const",
+        "final"
+       ],
+       "blanks": [
+        "let"
+       ],
+       "explanation": "In Swift let crea una costante."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede qui?",
+       "options": [
+        "Stampa nil",
+        "Stampa 8",
+        "Errore: una costante let non si può cambiare",
+        "Stampa 5"
+       ],
+       "answer": 2,
+       "explanation": "Una costante creata con let non può cambiare valore.",
+       "code": "let a = 5\na = 8\nprint(a)"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare il numero 7",
+       "lines": [
+        "var numero = 7",
+        "print(numero)"
+       ],
+       "explanation": "Prima si crea la variabile, poi la si usa."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "5",
+        "8",
+        "3",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "Con var il valore si può cambiare: vale l'ultimo assegnato.",
+       "code": "var a = 5\na = 8\nprint(a)"
+      }
+     ]
+    },
+    {
+     "title": "Tipi e operatori",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Di che tipo è il valore 3.14?",
+       "options": [
+        "String",
+        "Int",
+        "Bool",
+        "Double"
+       ],
+       "answer": 3,
+       "explanation": "I numeri con la virgola sono di tipo Double."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3 4",
+        "Errore",
+        "7",
+        "34"
+       ],
+       "answer": 2,
+       "explanation": "Con i numeri il + fa la somma.",
+       "code": "print(3 + 4)"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "7",
+        "Errore",
+        "34",
+        "3 + 4"
+       ],
+       "answer": 2,
+       "explanation": "Tra virgolette sono testi: il + li unisce.",
+       "code": "print(\"3\" + \"4\")"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa per stampare il doppio di x",
+       "template": [
+        "let x = 6",
+        "print(x ___ 2)"
+       ],
+       "bank": [
+        "*",
+        "+",
+        "/",
+        "="
+       ],
+       "blanks": [
+        "*"
+       ],
+       "explanation": "Il simbolo * moltiplica."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "2.5",
+        "2",
+        "3",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "Tra due interi la divisione è intera: il risultato è 2.",
+       "code": "print(5 / 2)"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare Ciao Marco",
+       "lines": [
+        "let nome = \"Marco\"",
+        "let saluto = \"Ciao \" + nome",
+        "print(saluto)"
+       ],
+       "explanation": "Ogni riga usa ciò che è stato creato prima."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Condizioni",
+   "subtitle": "Il programma sceglie",
+   "lessons": [
+    {
+     "title": "if ed else",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Maggiorenne",
+        "Niente",
+        "Errore",
+        "Minorenne"
+       ],
+       "answer": 0,
+       "explanation": "20 >= 18 è vero, quindi viene eseguito il blocco dell'if.",
+       "code": "let eta = 20\nif eta >= 18 {\n    print(\"Maggiorenne\")\n} else {\n    print(\"Minorenne\")\n}"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale operatore controlla se due valori sono uguali?",
+       "options": [
+        "!=",
+        "==",
+        "=>",
+        "="
+       ],
+       "answer": 1,
+       "explanation": "Un solo = assegna un valore, due == confrontano."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa la condizione",
+       "template": [
+        "let voto = 8",
+        "___ voto >= 6 {",
+        "    print(\"Promosso\")",
+        "}"
+       ],
+       "bank": [
+        "if",
+        "else",
+        "for",
+        "while"
+       ],
+       "blanks": [
+        "if"
+       ],
+       "explanation": "if apre la condizione e il blocco sta tra graffe."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma",
+       "lines": [
+        "let temp = 30",
+        "if temp > 25 {",
+        "    print(\"Fa caldo\")",
+        "}"
+       ],
+       "explanation": "Il blocco da eseguire sta tra le graffe dell'if."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Grande e poi Fine",
+        "Grande",
+        "Fine",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "La condizione è falsa, quindi l'if viene saltato. L'ultima riga è fuori dal blocco e viene sempre eseguita.",
+       "code": "let n = 3\nif n > 5 {\n    print(\"Grande\")\n}\nprint(\"Fine\")"
+      },
+      {
+       "type": "choice",
+       "prompt": "In Swift servono le parentesi tonde attorno alla condizione di un if?",
+       "options": [
+        "No, di solito si omettono",
+        "Solo con ==",
+        "Sì, sempre",
+        "Solo con else"
+       ],
+       "answer": 0,
+       "explanation": "In Swift le parentesi intorno alla condizione non servono; le graffe del blocco sì."
+      }
+     ]
+    },
+    {
+     "title": "else if e operatori logici",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "B",
+        "C",
+        "A",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "70 non è >= 90, ma è >= 60: si ferma al primo ramo vero.",
+       "code": "let p = 70\nif p >= 90 {\n    print(\"A\")\n} else if p >= 60 {\n    print(\"B\")\n} else {\n    print(\"C\")\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: devono essere vere entrambe le condizioni",
+       "template": [
+        "if x > 0 ___ x < 10 {",
+        "    print(\"Tra 0 e 10\")",
+        "}"
+       ],
+       "bank": [
+        "&&",
+        "||",
+        "!",
+        "=="
+       ],
+       "blanks": [
+        "&&"
+       ],
+       "explanation": "&& significa e: servono entrambe le condizioni."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quanto vale true && false?",
+       "options": [
+        "nil",
+        "false",
+        "Errore",
+        "true"
+       ],
+       "answer": 1,
+       "explanation": "Con && basta una condizione falsa per rendere falso il risultato."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Niente",
+        "No",
+        "Si",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "Con || basta che una condizione sia vera: b > 5 lo è.",
+       "code": "let a = 2\nlet b = 9\nif a > 5 || b > 5 {\n    print(\"Si\")\n} else {\n    print(\"No\")\n}"
+      },
+      {
+       "type": "order",
+       "prompt": "Il numero n esiste già. Ordina per stampare Pari se è pari, altrimenti Dispari",
+       "lines": [
+        "if n % 2 == 0 {",
+        "    print(\"Pari\")",
+        "} else {",
+        "    print(\"Dispari\")",
+        "}"
+       ],
+       "explanation": "% dà il resto della divisione: un numero pari ha resto 0 con 2."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa fa l'operatore !?",
+       "options": [
+        "Somma due numeri",
+        "Confronta due testi",
+        "Stampa un messaggio",
+        "Inverte vero in falso e viceversa"
+       ],
+       "answer": 3,
+       "explanation": "!true vale false e !false vale true."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cicli",
+   "subtitle": "Ripetere senza fatica",
+   "lessons": [
+    {
+     "title": "for",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "1, 2, 3",
+        "0, 1, 2, 3",
+        "0, 1, 2 su tre righe"
+       ],
+       "answer": 3,
+       "explanation": "0..<3 produce 0, 1, 2: il valore finale è escluso.",
+       "code": "for i in 0..<3 {\n    print(i)\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Ripeti il messaggio 5 volte",
+       "template": [
+        "___ i in 0..<5 {",
+        "    print(\"Ciao\")",
+        "}"
+       ],
+       "bank": [
+        "for",
+        "if",
+        "while",
+        "func"
+       ],
+       "blanks": [
+        "for"
+       ],
+       "explanation": "for ripete il blocco per ogni valore dell'intervallo."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quante volte stampa Hey?",
+       "options": [
+        "Infinite",
+        "3",
+        "5",
+        "4"
+       ],
+       "answer": 3,
+       "explanation": "0..<4 produce quattro valori, quindi il blocco gira quattro volte.",
+       "code": "for i in 0..<4 {\n    print(\"Hey\")\n}"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare i numeri da 1 a 3",
+       "lines": [
+        "for n in 1...3 {",
+        "    print(n)",
+        "}"
+       ],
+       "explanation": "1...3 include sia l'1 che il 3."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "0, 1, 2, 3",
+        "6",
+        "3",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "0+1+2+3 = 6. Il print è fuori dal ciclo: stampa una volta sola.",
+       "code": "var totale = 0\nfor i in 0..<4 {\n    totale = totale + i\n}\nprint(totale)"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quali numeri produce 1...3?",
+       "options": [
+        "0, 1, 2, 3",
+        "2, 3",
+        "1, 2",
+        "1, 2, 3"
+       ],
+       "answer": 3,
+       "explanation": "Con tre punti l'estremo finale è incluso; con ..< è escluso."
+      }
+     ]
+    },
+    {
+     "title": "while",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3, 2, 1",
+        "Va avanti all'infinito",
+        "1, 2, 3",
+        "3, 2, 1, 0"
+       ],
+       "answer": 0,
+       "explanation": "Il ciclo gira finché n > 0 e a ogni giro n diminuisce di 1.",
+       "code": "var n = 3\nwhile n > 0 {\n    print(n)\n    n = n - 1\n}"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il ciclo",
+       "template": [
+        "var n = 0",
+        "___ n < 3 {",
+        "    n = n + 1",
+        "}"
+       ],
+       "bank": [
+        "while",
+        "for",
+        "if",
+        "func"
+       ],
+       "blanks": [
+        "while"
+       ],
+       "explanation": "while ripete il blocco finché la condizione resta vera."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede se dimentichi di cambiare n dentro un while n > 0?",
+       "options": [
+        "Si ferma subito",
+        "Non succede nulla",
+        "Stampa una volta sola",
+        "Il ciclo non finisce mai"
+       ],
+       "answer": 3,
+       "explanation": "La condizione resta sempre vera: è un ciclo infinito."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione esce subito da un ciclo?",
+       "options": [
+        "stop",
+        "end",
+        "break",
+        "exit"
+       ],
+       "answer": 2,
+       "explanation": "break interrompe il ciclo."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma per contare da 1 a 3",
+       "lines": [
+        "var n = 1",
+        "while n <= 3 {",
+        "    print(n)",
+        "    n = n + 1",
+        "}"
+       ],
+       "explanation": "Si parte da un valore, si controlla la condizione, si stampa e si aggiorna n."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quando conviene usare for invece di while?",
+       "options": [
+        "Solo con i testi",
+        "Quando vuoi un errore",
+        "Quando sai quante volte ripetere",
+        "Mai"
+       ],
+       "answer": 2,
+       "explanation": "for è ideale con un numero noto di ripetizioni; while quando dipende da una condizione."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Array e funzioni",
+   "subtitle": "Il tuo primo programma completo",
+   "lessons": [
+    {
+     "title": "Array",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "mela",
+        "uva",
+        "pera"
+       ],
+       "answer": 1,
+       "explanation": "Gli indici partono da 0: il primo elemento è frutti[0].",
+       "code": "let frutti = [\"mela\", \"pera\", \"uva\"]\nprint(frutti[0])"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "4",
+        "2",
+        "3",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "count dà il numero di elementi.",
+       "code": "print([5, 6, 7].count)"
+      },
+      {
+       "type": "fill",
+       "prompt": "Aggiungi un elemento in fondo all'array",
+       "template": [
+        "var numeri = [1, 2]",
+        "numeri.___(3)"
+       ],
+       "bank": [
+        "append",
+        "push",
+        "add",
+        "insert"
+       ],
+       "blanks": [
+        "append"
+       ],
+       "explanation": "In Swift si usa append."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "uva",
+        "Errore",
+        "pera",
+        "mela"
+       ],
+       "answer": 0,
+       "explanation": "L'ultimo elemento ha indice count - 1.",
+       "code": "let frutti = [\"mela\", \"pera\", \"uva\"]\nprint(frutti[frutti.count - 1])"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare ogni colore dell'array",
+       "lines": [
+        "let colori = [\"rosso\", \"blu\"]",
+        "for colore in colori {",
+        "    print(colore)",
+        "}"
+       ],
+       "explanation": "for...in scorre direttamente gli elementi di un array."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "1",
+        "2",
+        "Errore",
+        "3"
+       ],
+       "answer": 3,
+       "explanation": "append ha aggiunto un elemento: ora l'array ne ha tre.",
+       "code": "var l = [1, 2]\nl.append(3)\nprint(l.count)"
+      }
+     ]
+    },
+    {
+     "title": "Funzioni",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Quale parola chiave definisce una funzione?",
+       "options": [
+        "func",
+        "fn",
+        "function",
+        "def"
+       ],
+       "answer": 0,
+       "explanation": "In Swift una funzione si crea con func."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa la definizione della funzione",
+       "template": [
+        "___ saluta() {",
+        "    print(\"Ciao\")",
+        "}",
+        "",
+        "saluta()"
+       ],
+       "bank": [
+        "func",
+        "def",
+        "function",
+        "let"
+       ],
+       "blanks": [
+        "func"
+       ],
+       "explanation": "func, il nome e le parentesi creano la funzione; l'ultima riga la chiama."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "nil",
+        "Errore",
+        "4",
+        "8"
+       ],
+       "answer": 3,
+       "explanation": "La funzione restituisce il doppio di 4. In Swift alla chiamata si scrive anche il nome del parametro.",
+       "code": "func doppio(x: Int) -> Int {\n    return x * 2\n}\n\nprint(doppio(x: 4))"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa indica la freccia -> nella definizione di una funzione?",
+       "options": [
+        "Un ciclo",
+        "Il tipo del valore restituito",
+        "Un commento",
+        "Una variabile"
+       ],
+       "answer": 1,
+       "explanation": "Dopo -> si scrive il tipo di ciò che la funzione restituisce."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: la funzione deve restituire la somma",
+       "template": [
+        "func somma(a: Int, b: Int) -> Int {",
+        "    ___ a + b",
+        "}",
+        "",
+        "print(somma(a: 2, b: 3))"
+       ],
+       "bank": [
+        "return",
+        "print",
+        "func",
+        "if"
+       ],
+       "blanks": [
+        "return"
+       ],
+       "explanation": "Con return il risultato torna al punto in cui la funzione è stata chiamata."
+      },
+      {
+       "type": "order",
+       "prompt": "Mini-programma finale: stampa il quadrato di 4",
+       "lines": [
+        "func quadrato(n: Int) -> Int {",
+        "    return n * n",
+        "}",
+        "print(quadrato(n: 4))"
+       ],
+       "explanation": "Prima definisci la funzione, poi la chiami: hai scritto un programma completo!"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
