@@ -1,0 +1,877 @@
+{
+ "language": "python",
+ "units": [
+  {
+   "title": "Primi passi",
+   "subtitle": "Fai parlare il computer",
+   "lessons": [
+    {
+     "title": "Il primo print",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione mostra un testo sullo schermo?",
+       "options": [
+        "say \"Ciao\"",
+        "show \"Ciao\"",
+        "print(\"Ciao\")",
+        "echo(\"Ciao\")"
+       ],
+       "answer": 2,
+       "explanation": "In Python si usa la funzione print() per mostrare qualcosa sullo schermo."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa questo codice?",
+       "options": [
+        "print",
+        "\"Ciao mondo\"",
+        "Niente",
+        "Ciao mondo"
+       ],
+       "answer": 3,
+       "explanation": "print mostra il testo senza le virgolette.",
+       "code": "print(\"Ciao mondo\")"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il codice per stampare Benvenuto",
+       "template": [
+        "___(\"Benvenuto\")"
+       ],
+       "bank": [
+        "print",
+        "Print",
+        "say",
+        "echo"
+       ],
+       "blanks": [
+        "print"
+       ],
+       "explanation": "Il nome della funzione è print, tutto minuscolo."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare prima Ciao e poi Come stai?",
+       "lines": [
+        "print(\"Ciao\")",
+        "print(\"Come stai?\")"
+       ],
+       "explanation": "Python esegue le righe dall'alto verso il basso, una dopo l'altra."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quante righe stampa questo programma?",
+       "options": [
+        "1",
+        "2",
+        "Dipende",
+        "0"
+       ],
+       "answer": 1,
+       "explanation": "Ogni print stampa su una riga nuova.",
+       "code": "print(\"A\")\nprint(\"B\")"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale riga è un commento, cioè viene ignorata da Python?",
+       "options": [
+        "print(commento)",
+        "<!-- commento -->",
+        "# questo è un commento",
+        "// questo è un commento"
+       ],
+       "answer": 2,
+       "explanation": "In Python i commenti iniziano con il simbolo #."
+      }
+     ]
+    },
+    {
+     "title": "Testi e commenti",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Ciao + Luca",
+        "Ciao Luca",
+        "CiaoLuca",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "Il + tra due testi li unisce. Qui il primo testo contiene già uno spazio dopo Ciao.",
+       "code": "print(\"Ciao \" + \"Luca\")"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il codice per stampare Hello",
+       "template": [
+        "# saluto",
+        "print(___)"
+       ],
+       "bank": [
+        "\"Hello\"",
+        "Hello",
+        "(Hello)",
+        "'Hello"
+       ],
+       "blanks": [
+        "\"Hello\""
+       ],
+       "explanation": "Il testo va scritto tra virgolette."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede con print(Ciao)?",
+       "options": [
+        "Stampa print",
+        "Non succede niente",
+        "Errore: il testo va tra virgolette",
+        "Stampa Ciao"
+       ],
+       "answer": 2,
+       "explanation": "Senza virgolette Python crede che Ciao sia il nome di una variabile e non la trova."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare Uno, poi Due, poi Tre",
+       "lines": [
+        "print(\"Uno\")",
+        "print(\"Due\")",
+        "print(\"Tre\")"
+       ],
+       "explanation": "L'ordine delle righe è l'ordine in cui compaiono i messaggi."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale riga è scritta correttamente?",
+       "options": [
+        "print(\"ok)",
+        "prin(\"ok\")",
+        "print(ok\")",
+        "print(\"ok\")"
+       ],
+       "answer": 3,
+       "explanation": "Servono il nome print scritto bene e le virgolette sia in apertura che in chiusura."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "ab",
+        "a+b",
+        "a b"
+       ],
+       "answer": 1,
+       "explanation": "Il + unisce i testi senza aggiungere spazi.",
+       "code": "print(\"a\" + \"b\")"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Variabili",
+   "subtitle": "Scatole con un nome",
+   "lessons": [
+    {
+     "title": "Salvare valori",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa fa questa riga?",
+       "options": [
+        "Confronta punti con 5",
+        "Stampa 5",
+        "Salva 5 nella variabile punti",
+        "Crea una funzione"
+       ],
+       "answer": 2,
+       "explanation": "Il simbolo = significa assegna: mette il valore nella variabile.",
+       "code": "punti = 5"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "punti",
+        "5",
+        "Errore",
+        "10"
+       ],
+       "answer": 3,
+       "explanation": "print mostra il valore della variabile, non il suo nome.",
+       "code": "punti = 10\nprint(punti)"
+      },
+      {
+       "type": "fill",
+       "prompt": "Crea una variabile nome con valore Anna",
+       "template": [
+        "___ = \"Anna\""
+       ],
+       "bank": [
+        "nome",
+        "\"nome\"",
+        "Anna",
+        "print"
+       ],
+       "blanks": [
+        "nome"
+       ],
+       "explanation": "Il nome della variabile va a sinistra dell'= e senza virgolette."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare il numero 7",
+       "lines": [
+        "numero = 7",
+        "print(numero)"
+       ],
+       "explanation": "Prima si crea la variabile, poi la si usa."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "8",
+        "5",
+        "3"
+       ],
+       "answer": 1,
+       "explanation": "L'ultimo valore assegnato sostituisce quello precedente.",
+       "code": "a = 5\na = 8\nprint(a)"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale nome di variabile è valido in Python?",
+       "options": [
+        "mio punteggio",
+        "2punti",
+        "mio-punteggio",
+        "mio_punteggio"
+       ],
+       "answer": 3,
+       "explanation": "Niente spazi né trattini, e il nome non può iniziare con un numero."
+      }
+     ]
+    },
+    {
+     "title": "Numeri e testi",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Di che tipo è il valore 3.14?",
+       "options": [
+        "bool (vero/falso)",
+        "str (testo)",
+        "float (numero decimale)",
+        "int (numero intero)"
+       ],
+       "answer": 2,
+       "explanation": "I numeri con la virgola (scritta come punto) sono di tipo float."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "34",
+        "3 4",
+        "7",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "Con i numeri il + fa la somma.",
+       "code": "print(3 + 4)"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "7",
+        "3 + 4",
+        "Errore",
+        "34"
+       ],
+       "answer": 3,
+       "explanation": "Tra virgolette sono testi: il + li unisce invece di sommarli.",
+       "code": "print(\"3\" + \"4\")"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa per stampare il doppio di x",
+       "template": [
+        "x = 6",
+        "print(x ___ 2)"
+       ],
+       "bank": [
+        "*",
+        "+",
+        "/",
+        "="
+       ],
+       "blanks": [
+        "*"
+       ],
+       "explanation": "Il simbolo * moltiplica."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "2.5",
+        "2",
+        "3",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "Il simbolo / fa sempre la divisione con la virgola. Per la sola parte intera si usa //.",
+       "code": "print(5 / 2)"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare Ciao Marco",
+       "lines": [
+        "nome = \"Marco\"",
+        "saluto = \"Ciao \" + nome",
+        "print(saluto)"
+       ],
+       "explanation": "Ogni riga usa ciò che è stato creato nelle righe precedenti."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Condizioni",
+   "subtitle": "Il programma sceglie",
+   "lessons": [
+    {
+     "title": "if ed else",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Maggiorenne",
+        "Errore",
+        "Minorenne",
+        "Niente"
+       ],
+       "answer": 0,
+       "explanation": "20 >= 18 è vero, quindi Python esegue il blocco dell'if.",
+       "code": "eta = 20\nif eta >= 18:\n    print(\"Maggiorenne\")\nelse:\n    print(\"Minorenne\")"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale simbolo controlla se due valori sono uguali?",
+       "options": [
+        "=>",
+        "==",
+        "=",
+        "!="
+       ],
+       "answer": 1,
+       "explanation": "Un solo = assegna un valore, due == confrontano."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa la condizione",
+       "template": [
+        "voto = 8",
+        "___ voto >= 6:",
+        "    print(\"Promosso\")"
+       ],
+       "bank": [
+        "if",
+        "else",
+        "for",
+        "print"
+       ],
+       "blanks": [
+        "if"
+       ],
+       "explanation": "if apre una condizione e la riga termina con i due punti."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma",
+       "lines": [
+        "temp = 30",
+        "if temp > 25:",
+        "    print(\"Fa caldo\")"
+       ],
+       "explanation": "Il codice dentro l'if è indentato, cioè rientrato."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "Fine",
+        "Grande e poi Fine",
+        "Grande"
+       ],
+       "answer": 1,
+       "explanation": "La condizione è falsa, quindi l'if viene saltato. print(\"Fine\") non è indentato: viene sempre eseguito.",
+       "code": "n = 3\nif n > 5:\n    print(\"Grande\")\nprint(\"Fine\")"
+      },
+      {
+       "type": "choice",
+       "prompt": "A cosa serve l'indentazione in Python?",
+       "options": [
+        "A creare variabili",
+        "È solo estetica",
+        "A scrivere i commenti",
+        "A indicare quali righe stanno dentro un blocco"
+       ],
+       "answer": 3,
+       "explanation": "In Python l'indentazione fa parte della sintassi: dice quali righe appartengono al blocco."
+      }
+     ]
+    },
+    {
+     "title": "elif e operatori logici",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "B",
+        "C",
+        "A",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "70 non è >= 90, ma è >= 60: Python si ferma al primo elif vero.",
+       "code": "p = 70\nif p >= 90:\n    print(\"A\")\nelif p >= 60:\n    print(\"B\")\nelse:\n    print(\"C\")"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: devono essere vere entrambe le condizioni",
+       "template": [
+        "if x > 0 ___ x < 10:",
+        "    print(\"Tra 0 e 10\")"
+       ],
+       "bank": [
+        "and",
+        "or",
+        "not",
+        "if"
+       ],
+       "blanks": [
+        "and"
+       ],
+       "explanation": "and richiede che tutte e due le condizioni siano vere."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quanto vale True and False?",
+       "options": [
+        "True",
+        "False",
+        "None",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "Con and basta una condizione falsa per rendere falso il risultato."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Niente",
+        "No",
+        "Errore",
+        "Si"
+       ],
+       "answer": 3,
+       "explanation": "Con or basta che una condizione sia vera: b > 5 lo è.",
+       "code": "a = 2\nb = 9\nif a > 5 or b > 5:\n    print(\"Si\")\nelse:\n    print(\"No\")"
+      },
+      {
+       "type": "order",
+       "prompt": "Il numero n esiste già. Ordina per stampare Pari se è pari, altrimenti Dispari",
+       "lines": [
+        "if n % 2 == 0:",
+        "    print(\"Pari\")",
+        "else:",
+        "    print(\"Dispari\")"
+       ],
+       "explanation": "Il simbolo % dà il resto della divisione: un numero pari ha resto 0 se diviso per 2."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa fa not?",
+       "options": [
+        "Confronta due testi",
+        "Inverte vero in falso e viceversa",
+        "Stampa un messaggio",
+        "Somma due numeri"
+       ],
+       "answer": 1,
+       "explanation": "not True vale False e not False vale True."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cicli",
+   "subtitle": "Ripetere senza fatica",
+   "lessons": [
+    {
+     "title": "for e range",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "0, 1, 2, 3",
+        "0, 1, 2 su tre righe",
+        "1, 2, 3",
+        "Errore"
+       ],
+       "answer": 1,
+       "explanation": "range(3) produce 0, 1, 2: parte da 0 e si ferma prima di 3.",
+       "code": "for i in range(3):\n    print(i)"
+      },
+      {
+       "type": "fill",
+       "prompt": "Ripeti il messaggio 5 volte",
+       "template": [
+        "___ i in range(5):",
+        "    print(\"Ciao\")"
+       ],
+       "bank": [
+        "for",
+        "if",
+        "while",
+        "def"
+       ],
+       "blanks": [
+        "for"
+       ],
+       "explanation": "for ripete il blocco per ogni valore prodotto da range."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quante volte stampa Hey?",
+       "options": [
+        "Infinite",
+        "3",
+        "5",
+        "4"
+       ],
+       "answer": 3,
+       "explanation": "range(4) produce quattro valori, quindi il blocco gira quattro volte.",
+       "code": "for i in range(4):\n    print(\"Hey\")"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare i numeri da 1 a 3",
+       "lines": [
+        "for n in range(1, 4):",
+        "    print(n)"
+       ],
+       "explanation": "range(1, 4) parte da 1 e si ferma prima di 4."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "6",
+        "3",
+        "0, 1, 2, 3",
+        "Errore"
+       ],
+       "answer": 0,
+       "explanation": "0+1+2+3 = 6. Il print è fuori dal ciclo, quindi stampa una volta sola alla fine.",
+       "code": "totale = 0\nfor i in range(4):\n    totale = totale + i\nprint(totale)"
+      },
+      {
+       "type": "choice",
+       "prompt": "Quali numeri produce range(2, 5)?",
+       "options": [
+        "2, 3, 4",
+        "2, 3, 4, 5",
+        "3, 4, 5",
+        "2, 5"
+       ],
+       "answer": 0,
+       "explanation": "Parte dal primo numero e si ferma prima del secondo."
+      }
+     ]
+    },
+    {
+     "title": "while",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "3, 2, 1, 0",
+        "1, 2, 3",
+        "Va avanti all'infinito",
+        "3, 2, 1"
+       ],
+       "answer": 3,
+       "explanation": "Il ciclo gira finché n > 0, e a ogni giro n diminuisce di 1.",
+       "code": "n = 3\nwhile n > 0:\n    print(n)\n    n = n - 1"
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa il ciclo",
+       "template": [
+        "n = 0",
+        "___ n < 3:",
+        "    n = n + 1"
+       ],
+       "bank": [
+        "while",
+        "for",
+        "if",
+        "range"
+       ],
+       "blanks": [
+        "while"
+       ],
+       "explanation": "while ripete il blocco finché la condizione resta vera."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa succede se dimentichi di cambiare n dentro un while n > 0?",
+       "options": [
+        "Si ferma subito",
+        "Il ciclo non finisce mai",
+        "Stampa una volta sola",
+        "Non succede nulla"
+       ],
+       "answer": 1,
+       "explanation": "La condizione resta sempre vera: è un ciclo infinito."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quale istruzione esce subito da un ciclo?",
+       "options": [
+        "end",
+        "stop",
+        "exit",
+        "break"
+       ],
+       "answer": 3,
+       "explanation": "break interrompe il ciclo e il programma continua dopo di esso."
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina il programma per contare da 1 a 3",
+       "lines": [
+        "n = 1",
+        "while n <= 3:",
+        "    print(n)",
+        "    n = n + 1"
+       ],
+       "explanation": "Si parte da un valore, si controlla la condizione, si stampa e si aggiorna n."
+      },
+      {
+       "type": "choice",
+       "prompt": "Quando conviene usare for invece di while?",
+       "options": [
+        "Quando sai quante volte ripetere",
+        "Solo con i testi",
+        "Mai",
+        "Quando vuoi un errore"
+       ],
+       "answer": 0,
+       "explanation": "for è perfetto con un numero noto di ripetizioni o per scorrere una lista; while quando dipende da una condizione."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Liste e funzioni",
+   "subtitle": "Il tuo primo programma completo",
+   "lessons": [
+    {
+     "title": "Liste",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "pera",
+        "mela",
+        "uva"
+       ],
+       "answer": 2,
+       "explanation": "Gli indici delle liste partono da 0: il primo elemento è frutti[0].",
+       "code": "frutti = [\"mela\", \"pera\", \"uva\"]\nprint(frutti[0])"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "2",
+        "Errore",
+        "3",
+        "4"
+       ],
+       "answer": 2,
+       "explanation": "len() conta gli elementi della lista.",
+       "code": "print(len([5, 6, 7]))"
+      },
+      {
+       "type": "fill",
+       "prompt": "Aggiungi un elemento in fondo alla lista",
+       "template": [
+        "numeri = [1, 2]",
+        "numeri.___(3)"
+       ],
+       "bank": [
+        "append",
+        "add",
+        "push",
+        "insert"
+       ],
+       "blanks": [
+        "append"
+       ],
+       "explanation": "append aggiunge un elemento alla fine della lista."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "pera",
+        "mela",
+        "uva",
+        "Errore"
+       ],
+       "answer": 2,
+       "explanation": "L'indice -1 indica l'ultimo elemento.",
+       "code": "frutti = [\"mela\", \"pera\", \"uva\"]\nprint(frutti[-1])"
+      },
+      {
+       "type": "order",
+       "prompt": "Ordina le righe per stampare ogni colore della lista",
+       "lines": [
+        "colori = [\"rosso\", \"blu\"]",
+        "for c in colori:",
+        "    print(c)"
+       ],
+       "explanation": "for può scorrere direttamente gli elementi di una lista."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "[1, 2]",
+        "Errore",
+        "[1, 2, 3]",
+        "[3]"
+       ],
+       "answer": 2,
+       "explanation": "append ha aggiunto 3 in fondo alla lista.",
+       "code": "l = [1, 2]\nl.append(3)\nprint(l)"
+      }
+     ]
+    },
+    {
+     "title": "Funzioni",
+     "exercises": [
+      {
+       "type": "choice",
+       "prompt": "Quale parola chiave definisce una funzione?",
+       "options": [
+        "def",
+        "function",
+        "func",
+        "fn"
+       ],
+       "answer": 0,
+       "explanation": "In Python una funzione si crea con def."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa la definizione della funzione",
+       "template": [
+        "___ saluta():",
+        "    print(\"Ciao\")",
+        "",
+        "saluta()"
+       ],
+       "bank": [
+        "def",
+        "for",
+        "if",
+        "return"
+       ],
+       "blanks": [
+        "def"
+       ],
+       "explanation": "def seguito dal nome e dalle parentesi crea la funzione; l'ultima riga la chiama."
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa stampa?",
+       "options": [
+        "Errore",
+        "4",
+        "None",
+        "8"
+       ],
+       "answer": 3,
+       "explanation": "La funzione restituisce il doppio di 4.",
+       "code": "def doppio(x):\n    return x * 2\n\nprint(doppio(4))"
+      },
+      {
+       "type": "choice",
+       "prompt": "Cosa fa return?",
+       "options": [
+        "Restituisce un valore a chi ha chiamato la funzione",
+        "Stampa a schermo",
+        "Crea una variabile",
+        "Chiude il programma"
+       ],
+       "answer": 0,
+       "explanation": "print mostra un valore, return lo restituisce per poterlo usare altrove."
+      },
+      {
+       "type": "fill",
+       "prompt": "Completa: la funzione deve restituire la somma",
+       "template": [
+        "def somma(a, b):",
+        "    ___ a + b",
+        "",
+        "print(somma(2, 3))"
+       ],
+       "bank": [
+        "return",
+        "print",
+        "def",
+        "if"
+       ],
+       "blanks": [
+        "return"
+       ],
+       "explanation": "Con return il risultato torna al punto in cui la funzione è stata chiamata."
+      },
+      {
+       "type": "order",
+       "prompt": "Mini-programma finale: stampa il quadrato di 4",
+       "lines": [
+        "def quadrato(n):",
+        "    return n * n",
+        "print(quadrato(4))"
+       ],
+       "explanation": "Prima definisci la funzione, poi la chiami: hai appena scritto un programma completo!"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
